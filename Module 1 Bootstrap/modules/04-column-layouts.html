@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: Column Layouts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background: #f8f9fa; padding: 30px 0; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 0; margin-bottom: 40px; }
+        .exercise-section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .exercise-title { color: #667eea; font-weight: 600; font-size: 1.3rem; margin-bottom: 20px; }
+        .code-block { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 6px; overflow-x: auto; margin: 15px 0; font-size: 0.85rem; }
+        .code-block code { color: #f8f8f2; font-family: 'Courier New', monospace; }
+        .demo-box { background: #667eea; color: white; padding: 30px; border-radius: 6px; text-align: center; margin: 10px 0; }
+        .demo-sidebar { background: #764ba2; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="bi bi-bootstrap-fill"></i> Bootstrap 5 Exercises</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="module-header">
+        <div class="container">
+            <h1>🏗️ Module 4: Building Real Layouts</h1>
+            <p class="lead mb-0">Time to build like a pro! Create sidebars, multi-column layouts, and awesome page designs. 💪</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Exercise 4.1 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 4.1: Sidebar Layout</h2>
+                    <p class="text-muted">Create a two-column layout with sidebar (25%) and content area (75%)</p>
+
+                    <h5 class="mt-4 mb-3">Layout Structure</h5>
+                    <p>This is a common pattern for dashboards, blogs, and admin panels:</p>
+                    <div style="background: #f0f0f0; padding: 15px; border-radius: 6px; margin: 15px 0;">
+                        <div style="background: #667eea; color: white; padding: 20px; border-radius: 6px; margin-bottom: 15px; text-align: center;">Header / Navbar</div>
+                        <div class="row g-3" style="margin: 0;">
+                            <div class="col-md-3" style="background: #764ba2; color: white; padding: 20px; border-radius: 6px; min-height: 300px;">Sidebar (25%)</div>
+                            <div class="col-md-9" style="background: #e0e0e0; padding: 20px; border-radius: 6px; color: #333;">Main Content (75%)</div>
+                        </div>
+                        <div style="background: #333; color: white; padding: 20px; border-radius: 6px; margin-top: 15px; text-align: center;">Footer</div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Complete HTML Code</h5>
+                    <div class="code-block">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exercise 4.1: Sidebar Layout&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Navbar --&gt;
+    &lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;a class="navbar-brand" href="#"&gt;My Website&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="row"&gt;
+            &lt;!-- Sidebar: 25% width on medium and up, full width on mobile --&gt;
+            &lt;aside class="col-md-3 bg-light p-4"&gt;
+                &lt;h5&gt;Sidebar&lt;/h5&gt;
+                &lt;ul class="list-group"&gt;
+                    &lt;li class="list-group-item"&gt;Link 1&lt;/li&gt;
+                    &lt;li class="list-group-item"&gt;Link 2&lt;/li&gt;
+                    &lt;li class="list-group-item"&gt;Link 3&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/aside&gt;
+
+            &lt;!-- Main Content: 75% width on medium and up --&gt;
+            &lt;main class="col-md-9 p-4"&gt;
+                &lt;h2&gt;Main Content&lt;/h2&gt;
+                &lt;p&gt;This is the main content area. It takes 75% width on tablets and desktops, but 100% on mobile.&lt;/p&gt;
+            &lt;/main&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Key Points</h5>
+                    <ul>
+                        <li><code>.col-md-3</code> = 25% (3 out of 12 columns)</li>
+                        <li><code>.col-md-9</code> = 75% (9 out of 12 columns)</li>
+                        <li>On mobile (no class), both take 100% width and stack vertically</li>
+                        <li>Use <code>.bg-light</code> to distinguish sidebar visually</li>
+                        <li>Perfect for dashboards, documentation sites, blogs</li>
+                    </ul>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise4-1.html</code></li>
+                        <li>Build a sidebar layout with:
+                            <ul>
+                                <li>Navigation bar at top</li>
+                                <li>Sidebar with navigation menu (use list-group)</li>
+                                <li>Main content area with articles/cards</li>
+                                <li>Footer</li>
+                            </ul>
+                        </li>
+                        <li>Test responsiveness on mobile (should stack)</li>
+                    </ol>
+                </div>
+
+                <!-- Exercise 4.2 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 4.2: Four-Column Equal Layout</h2>
+                    <p class="text-muted">Create a four-column layout with equal widths using col-sm-3</p>
+
+                    <h5 class="mt-4 mb-3">Understanding Equal Columns</h5>
+                    <p>Bootstrap automatically calculates equal widths:</p>
+                    <ul>
+                        <li>4 columns × .col-sm-3 (3 cols each) = 12 cols total = perfect fit</li>
+                        <li>Each column = 25% width (12 ÷ 4 = 3 columns each)</li>
+                    </ul>
+
+                    <h5 class="mt-4 mb-3">Code Example</h5>
+                    <div class="code-block">
+<code>&lt;div class="container mt-5"&gt;
+    &lt;h2 class="mb-4"&gt;Four-Column Layout&lt;/h2&gt;
+    &lt;div class="row g-3"&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;div class="card"&gt;
+                &lt;div class="card-body"&gt;
+                    &lt;h5 class="card-title"&gt;Feature 1&lt;/h5&gt;
+                    &lt;p class="card-text"&gt;Description here&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- Repeat 3 more times --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Live Preview</h5>
+                    <div class="container-fluid mt-4 mb-4">
+                        <div class="row g-3">
+                            <div class="col-sm-3">
+                                <div class="demo-box">Column 1<br><small>25%</small></div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="demo-box demo-sidebar">Column 2<br><small>25%</small></div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="demo-box">Column 3<br><small>25%</small></div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="demo-box demo-sidebar">Column 4<br><small>25%</small></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Responsive Behavior</h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Screen Size</th>
+                                    <th>Width</th>
+                                    <th>Layout</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mobile (< 576px)</td>
+                                    <td>Full width</td>
+                                    <td>All 4 columns stack vertically (100% each)</td>
+                                </tr>
+                                <tr>
+                                    <td>Tablet (≥ 576px)</td>
+                                    <td>25% each</td>
+                                    <td>All 4 columns in one row</td>
+                                </tr>
+                                <tr>
+                                    <td>Desktop (≥ 768px+)</td>
+                                    <td>25% each</td>
+                                    <td>All 4 columns in one row</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Advanced: Auto-Layout Columns</h5>
+                    <p>You can also use Bootstrap's auto-layout features:</p>
+                    <div class="code-block">
+<code>&lt;!-- Equal width columns (no number needed) --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col"&gt;Column 1&lt;/div&gt;
+    &lt;div class="col"&gt;Column 2&lt;/div&gt;
+    &lt;div class="col"&gt;Column 3&lt;/div&gt;
+    &lt;div class="col"&gt;Column 4&lt;/div&gt;
+&lt;/div&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise4-2.html</code></li>
+                        <li>Create a four-column card layout with:
+                            <ul>
+                                <li>4 equal-width cards</li>
+                                <li>Each card with image, title, and description</li>
+                                <li>Responsive (stack on mobile)</li>
+                                <li>Use proper spacing (g-3)</li>
+                            </ul>
+                        </li>
+                        <li>Test on different screen sizes</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Column Division Cheat Sheet</h5>
+                    </div>
+                    <div class="card-body small">
+                        <p class="text-muted mb-2"><strong>2 Columns:</strong></p>
+                        <code class="d-block bg-light p-2 rounded mb-2">.col-md-6 + .col-md-6</code>
+
+                        <p class="text-muted mb-2"><strong>3 Columns:</strong></p>
+                        <code class="d-block bg-light p-2 rounded mb-2">.col-md-4 + .col-md-4 + .col-md-4</code>
+
+                        <p class="text-muted mb-2"><strong>4 Columns:</strong></p>
+                        <code class="d-block bg-light p-2 rounded mb-2">.col-md-3 × 4</code>
+
+                        <p class="text-muted mb-2"><strong>Sidebar (25/75):</strong></p>
+                        <code class="d-block bg-light p-2 rounded mb-2">.col-md-3 + .col-md-9</code>
+
+                        <p class="text-muted mb-2"><strong>Auto Equal:</strong></p>
+                        <code class="d-block bg-light p-2 rounded">.col (repeats automatically)</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container mt-5 mb-5">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">💪 You're Building Layouts Now!</h4>
+            <p>Awesome! You've mastered the most important Bootstrap skill. Sidebar layouts, multi-column designs - you can build them all now. You're officially dangerous! 🗡️</p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="03-grid-basics.html" class="btn btn-secondary">← Previous</a>
+                <a href="../index.html" class="btn btn-secondary">Back to Modules</a>
+                <a href="05-alignment.html" class="btn btn-primary float-end">Next Module →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

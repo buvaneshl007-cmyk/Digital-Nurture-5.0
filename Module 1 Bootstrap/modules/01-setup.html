@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Setting Up Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background: #f8f9fa; padding: 30px 0; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 0; margin-bottom: 40px; }
+        .exercise-section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .exercise-title { color: #667eea; font-weight: 600; font-size: 1.3rem; margin-bottom: 20px; }
+        .code-block { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 6px; overflow-x: auto; margin: 15px 0; }
+        .code-block code { color: #f8f8f2; font-family: 'Courier New', monospace; }
+        .task-list { list-style: none; padding: 0; }
+        .task-list li { padding: 10px 0; padding-left: 30px; position: relative; }
+        .task-list li:before { content: "✓"; position: absolute; left: 0; color: #28a745; font-weight: bold; }
+        .preview-box { border: 2px solid #e0e0e0; padding: 20px; border-radius: 6px; background: #f9f9f9; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="bi bi-bootstrap-fill"></i> Bootstrap 5 Exercises</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="module-header">
+        <div class="container">
+            <h1>🚀 Module 1: Let's Get Bootstrap Running!</h1>
+            <p class="lead mb-0">We'll show you the quickest ways to get started - CDN (easiest) and npm (for pros). Pick your weapon! ⚡</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Exercise 1.1 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">💻 Exercise 1.1: Quick Start with CDN</h2>
+                    <p class="text-muted"><strong>The easiest way to get going!</strong> No installation, no fuss. Just copy-paste and you're ready. Perfect for beginners and quick projects! 🚀</p>
+                    
+                    <h5 class="mt-4 mb-3">What You'll Learn</h5>
+                    <ul class="task-list">
+                        <li>How to link Bootstrap CSS and JavaScript via CDN</li>
+                        <li>Understanding the meta viewport tag for responsive design</li>
+                        <li>Basic HTML structure with Bootstrap</li>
+                    </ul>
+
+                    <h5 class="mt-4 mb-3">Step-by-Step Instructions</h5>
+                    <div class="alert alert-info">
+                        <strong>Step 1:</strong> Create a new HTML file named <code>exercise1-1.html</code>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <strong>Step 2:</strong> Copy this basic structure:
+                    </div>
+
+                    <div class="code-block">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Bootstrap 5 CDN Setup&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container mt-5"&gt;
+        &lt;h1&gt;Hello Bootstrap 5!&lt;/h1&gt;
+        &lt;p class="lead"&gt;This page uses Bootstrap via CDN&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Key Points Explained</h5>
+                    <div class="alert alert-light border">
+                        <p><strong>Meta Viewport Tag:</strong> <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> ensures your page is responsive on mobile devices.</p>
+                        <p><strong>Bootstrap CSS CDN:</strong> Links the compiled Bootstrap CSS file from a Content Delivery Network.</p>
+                        <p><strong>Bootstrap JS Bundle:</strong> Includes Bootstrap's JavaScript components and their dependencies (Popper.js).</p>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create the HTML file with the provided code</li>
+                        <li>Open it in a browser</li>
+                        <li>Verify that the styling looks different from plain HTML</li>
+                        <li>Try resizing the browser window to see responsive behavior</li>
+                    </ol>
+                </div>
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 1.2: NPM Setup</h2>
+                    <p class="text-muted">Set up a project using npm and downloaded Bootstrap files</p>
+                    
+                    <h5 class="mt-4 mb-3">What You'll Learn</h5>
+                    <ul class="task-list">
+                        <li>How to set up Bootstrap with npm (no command line needed)</li>
+                        <li>Understanding project structure</li>
+                        <li>Using downloaded Bootstrap files</li>
+                    </ul>
+
+                    <h5 class="mt-4 mb-3">Alternative: No-Command Approach (Recommended for Beginners)</h5>
+                    <p>Instead of using npm commands, you can download Bootstrap files directly:</p>
+
+                    <div class="alert alert-success">
+                        <strong>Option 1: Download Bootstrap from getbootstrap.com</strong>
+                        <ol>
+                            <li>Visit <a href="https://getbootstrap.com/docs/5.3/getting-started/download/" target="_blank">Bootstrap Download Page</a></li>
+                            <li>Download the compiled CSS and JS files</li>
+                            <li>Extract the ZIP file in your project folder</li>
+                            <li>Link to the files in your HTML</li>
+                        </ol>
+                    </div>
+                    <h5 class="mt-4 mb-3">Sample HTML with Downloaded Files</h5>
+                    <div class="code-block">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Bootstrap 5 Local Files&lt;/title&gt;
+    &lt;link href="bootstrap-5.3.0-dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container mt-5"&gt;
+        &lt;h1&gt;Using Bootstrap from Downloaded Files&lt;/h1&gt;
+        &lt;button class="btn btn-primary"&gt;Click Me!&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Folder Structure After Download</h5>
+                    <div class="preview-box">
+                        <code>your-project/<br>
+                        ├── index.html<br>
+                        ├── bootstrap-5.3.0-dist/<br>
+                        │   ├── css/<br>
+                        │   │   ├── bootstrap.min.css<br>
+                        │   │   └── bootstrap.min.css.map<br>
+                        │   └── js/<br>
+                        │       ├── bootstrap.bundle.min.js<br>
+                        │       └── bootstrap.bundle.min.js.map<br>
+                        └── style.css (your custom CSS)</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Download Bootstrap from getbootstrap.com</li>
+                        <li>Extract the files into your project folder</li>
+                        <li>Create an HTML file and link to the local Bootstrap files</li>
+                        <li>Add some Bootstrap components (button, card, etc.)</li>
+                        <li>Open in browser and verify it works</li>
+                    </ol>
+
+                    <div class="alert alert-info mt-4">
+                        <strong>💡 Pro Tip:</strong> Use the CDN approach for quick prototyping and learning. Use downloaded files when you need customization or offline development.
+                    </div>
+                </div>
+                <div class="exercise-section">
+                    <h2 class="exercise-title">CDN vs Downloaded Files Comparison</h2>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Aspect</th>
+                                    <th>CDN</th>
+                                    <th>Downloaded Files</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Setup Speed</strong></td>
+                                    <td>⚡ Very Fast</td>
+                                    <td>⏱️ Requires Download</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Offline Use</strong></td>
+                                    <td>❌ No</td>
+                                    <td>✅ Yes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Customization</strong></td>
+                                    <td>❌ Limited</td>
+                                    <td>✅ Full (with Sass)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Best For</strong></td>
+                                    <td>Learning, Prototyping</td>
+                                    <td>Production, Customization</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Performance</strong></td>
+                                    <td>✅ Cached by browsers</td>
+                                    <td>❌ No external cache</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Quick Reference</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="mb-3">Bootstrap 5 CDN Links</h6>
+                        <p class="small text-muted mb-2"><strong>CSS (Latest):</strong></p>
+                        <code class="small d-block bg-light p-2 rounded mb-3 text-break">https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css</code>
+
+                        <p class="small text-muted mb-2"><strong>JS Bundle:</strong></p>
+                        <code class="small d-block bg-light p-2 rounded mb-3 text-break">https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js</code>
+
+                        <hr>
+                        <h6 class="mb-3">Important Links</h6>
+                        <ul class="small list-unstyled">
+                            <li><a href="https://getbootstrap.com/" target="_blank" class="text-decoration-none">Bootstrap Official</a></li>
+                            <li><a href="https://getbootstrap.com/docs/5.3/" target="_blank" class="text-decoration-none">Documentation</a></li>
+                            <li><a href="https://getbootstrap.com/docs/5.3/getting-started/download/" target="_blank" class="text-decoration-none">Download</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="container mt-5 mb-5">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">✅ You're Ready!</h4>
+            <p>Awesome! You now know how to set up Bootstrap. The rest is just building cool stuff. Let's go! 🚀</p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="../index.html" class="btn btn-secondary">Back to Modules</a>
+                <a href="02-structure.html" class="btn btn-primary float-end">Next Module →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

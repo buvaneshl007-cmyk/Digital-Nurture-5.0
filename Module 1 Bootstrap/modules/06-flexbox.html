@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6: Responsive Flexbox Utilities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background: #f8f9fa; padding: 30px 0; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 0; margin-bottom: 40px; }
+        .exercise-section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .exercise-title { color: #667eea; font-weight: 600; font-size: 1.3rem; margin-bottom: 20px; }
+        .code-block { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 6px; overflow-x: auto; margin: 15px 0; font-size: 0.85rem; }
+        .demo-box { background: #667eea; color: white; padding: 20px; border-radius: 6px; text-align: center; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="bi bi-bootstrap-fill"></i> Bootstrap 5 Exercises</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="module-header">
+        <div class="container">
+            <h1>🎨 Module 6: Flexbox Power Moves</h1>
+            <p class="lead mb-0">Unlock the power of flexbox! Create flexible, responsive designs with ease. 🔥</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Exercise 6.1 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 6.1: Responsive Navbar</h2>
+                    <p class="text-muted">Create navbar that stacks vertically on mobile, horizontal on desktop</p>
+
+                    <h5 class="mt-4 mb-3">Flexbox Properties Used</h5>
+                    <table class="table table-sm">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Class</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>.d-flex</code></td>
+                                <td>Display: flex (enable flexbox)</td>
+                            </tr>
+                            <tr>
+                                <td><code>.flex-column</code></td>
+                                <td>Stack items vertically</td>
+                            </tr>
+                            <tr>
+                                <td><code>.flex-md-row</code></td>
+                                <td>Arrange horizontally from medium up</td>
+                            </tr>
+                            <tr>
+                                <td><code>.justify-content-between</code></td>
+                                <td>Space items apart</td>
+                            </tr>
+                            <tr>
+                                <td><code>.align-items-center</code></td>
+                                <td>Center items vertically</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5 class="mt-4 mb-3">Complete Navbar Code</h5>
+                    <div class="code-block">
+<code>&lt;nav class="d-flex flex-column flex-md-row justify-content-between align-items-center p-3 bg-dark text-white"&gt;
+    &lt;h5 class="mb-3 mb-md-0"&gt;Brand&lt;/h5&gt;
+    
+    &lt;ul class="d-flex flex-column flex-md-row list-unstyled gap-3"&gt;
+        &lt;li&gt;&lt;a href="#" class="text-white text-decoration-none"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" class="text-white text-decoration-none"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" class="text-white text-decoration-none"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;input type="text" class="form-control form-control-sm w-100 w-md-25" placeholder="Search"&gt;
+&lt;/nav&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise6-1.html</code></li>
+                        <li>Build a responsive navbar with:
+                            <ul>
+                                <li>Brand/logo on left</li>
+                                <li>Navigation links in middle</li>
+                                <li>Search form on right</li>
+                                <li>Stacks vertically on mobile</li>
+                                <li>Horizontal layout on desktop</li>
+                            </ul>
+                        </li>
+                        <li>Test responsiveness</li>
+                    </ol>
+                </div>
+
+                <!-- Exercise 6.2 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 6.2: Card Layout with Flexbox</h2>
+                    <p class="text-muted">Use flexbox utilities for proper card spacing and alignment</p>
+
+                    <h5 class="mt-4 mb-3">Card Flexbox Pattern</h5>
+                    <div class="code-block">
+<code>&lt;div class="card h-100 d-flex flex-column"&gt;
+    &lt;img src="image.jpg" class="card-img-top" alt="..."&gt;
+    
+    &lt;div class="card-body d-flex flex-column flex-grow-1"&gt;
+        &lt;h5 class="card-title"&gt;Title&lt;/h5&gt;
+        &lt;p class="card-text flex-grow-1"&gt;Description text...&lt;/p&gt;
+        &lt;a href="#" class="btn btn-primary mt-auto"&gt;Learn More&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Key Classes Explained</h5>
+                    <ul>
+                        <li><code>.h-100</code> - Full height of parent</li>
+                        <li><code>.d-flex</code> - Enable flexbox</li>
+                        <li><code>.flex-column</code> - Stack content vertically</li>
+                        <li><code>.flex-grow-1</code> - Allow content to grow</li>
+                        <li><code>.mt-auto</code> - Push button to bottom</li>
+                    </ul>
+
+                    <h5 class="mt-4 mb-3">Result: Equal Height Cards with Bottom Buttons</h5>
+                    <div style="border: 2px dashed #ccc; padding: 20px; border-radius: 6px; background: #f9f9f9;">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card h-100 d-flex flex-column">
+                                    <div style="background: #667eea; height: 150px; border-radius: 6px 6px 0 0;"></div>
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Card 1</h5>
+                                        <p class="card-text flex-grow-1">Short description</p>
+                                        <button class="btn btn-primary btn-sm mt-auto">Learn More</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 d-flex flex-column">
+                                    <div style="background: #764ba2; height: 150px; border-radius: 6px 6px 0 0;"></div>
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Card 2</h5>
+                                        <p class="card-text flex-grow-1">Longer description text that goes on multiple lines to show how flex-grow-1 works</p>
+                                        <button class="btn btn-primary btn-sm mt-auto">Learn More</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 d-flex flex-column">
+                                    <div style="background: #28a745; height: 150px; border-radius: 6px 6px 0 0;"></div>
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Card 3</h5>
+                                        <p class="card-text flex-grow-1">Description</p>
+                                        <button class="btn btn-primary btn-sm mt-auto">Learn More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Common Flexbox Utilities</h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Utility</th>
+                                    <th>Effect</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>.flex-wrap</code></td>
+                                    <td>Wrap flex items to next line</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.gap-3</code></td>
+                                    <td>Space between flex items</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.flex-grow-1</code></td>
+                                    <td>Grow to fill available space</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.flex-shrink-0</code></td>
+                                    <td>Don't shrink below content size</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise6-2.html</code></li>
+                        <li>Create a card grid with:
+                            <ul>
+                                <li>3 cards in a row (use grid)</li>
+                                <li>Each card has different content length</li>
+                                <li>Buttons aligned at bottom (use flexbox)</li>
+                                <li>All cards same height</li>
+                            </ul>
+                        </li>
+                        <li>Test on different screen sizes</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Flexbox Cheat Sheet</h5>
+                    </div>
+                    <div class="card-body small">
+                        <h6 class="mb-2">Basics</h6>
+                        <code class="d-block bg-light p-2 rounded mb-2">.d-flex</code>
+
+                        <h6 class="mb-2">Direction</h6>
+                        <code class="d-block bg-light p-2 rounded mb-1">.flex-row</code>
+                        <code class="d-block bg-light p-2 rounded mb-2">.flex-column</code>
+
+                        <h6 class="mb-2">Responsive</h6>
+                        <code class="d-block bg-light p-2 rounded mb-2">.flex-md-row</code>
+
+                        <h6 class="mb-2">Alignment</h6>
+                        <code class="d-block bg-light p-2 rounded mb-1">.justify-content-between</code>
+                        <code class="d-block bg-light p-2 rounded mb-2">.align-items-center</code>
+
+                        <h6 class="mb-2">Spacing</h6>
+                        <code class="d-block bg-light p-2 rounded mb-1">.gap-3</code>
+                        <code class="d-block bg-light p-2 rounded">.flex-grow-1</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container mt-5 mb-5">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">🔥 Flexbox Master!</h4>
+            <p>You just unlocked advanced layout powers! Flexbox is the secret weapon of modern web designers. You're officially in the "cool kids" club. 😎</p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="05-alignment.html" class="btn btn-secondary">← Previous</a>
+                <a href="../index.html" class="btn btn-secondary">Back to Modules</a>
+                <a href="07-typography.html" class="btn btn-primary float-end">Next Module →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5: Alignment & Reordering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background: #f8f9fa; padding: 30px 0; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 0; margin-bottom: 40px; }
+        .exercise-section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .exercise-title { color: #667eea; font-weight: 600; font-size: 1.3rem; margin-bottom: 20px; }
+        .code-block { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 6px; overflow-x: auto; margin: 15px 0; font-size: 0.85rem; }
+        .demo-box { background: #667eea; color: white; padding: 30px; border-radius: 6px; text-align: center; margin: 10px 0; }
+        .demo-box-2 { background: #764ba2; }
+        .demo-box-3 { background: #28a745; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="bi bi-bootstrap-fill"></i> Bootstrap 5 Exercises</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="module-header">
+        <div class="container">
+            <h1>⚙️ Module 5: Alignment & Reordering Magic</h1>
+            <p class="lead mb-0">Get things centered, aligned, and responsive. We'll show you the tricks! 💡</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Exercise 5.1 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 5.1: Content Centering</h2>
+                    <p class="text-muted">Use flexbox utilities to center content horizontally and vertically</p>
+
+                    <h5 class="mt-4 mb-3">Alignment Utilities</h5>
+                    <table class="table table-sm">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Class</th>
+                                <th>Effect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>.justify-content-center</code></td>
+                                <td>Center columns horizontally in row</td>
+                            </tr>
+                            <tr>
+                                <td><code>.justify-content-between</code></td>
+                                <td>Space between columns (left & right edges)</td>
+                            </tr>
+                            <tr>
+                                <td><code>.justify-content-around</code></td>
+                                <td>Equal space around each column</td>
+                            </tr>
+                            <tr>
+                                <td><code>.align-items-center</code></td>
+                                <td>Center columns vertically in row</td>
+                            </tr>
+                            <tr>
+                                <td><code>.align-items-start</code></td>
+                                <td>Align to top</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5 class="mt-4 mb-3">Horizontal Centering Example</h5>
+                    <div class="code-block">
+<code>&lt;div class="row justify-content-center"&gt;
+    &lt;div class="col-md-6"&gt;
+        &lt;div class="card"&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5&gt;Centered Column&lt;/h5&gt;
+                &lt;p&gt;This column is centered on the page&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Live Preview</h5>
+                    <div style="border: 2px dashed #ccc; padding: 20px; border-radius: 6px; background: #f9f9f9;">
+                        <div class="row justify-content-center" style="min-height: 150px; background: #e8f0ff; border-radius: 6px; margin: 0;">
+                            <div class="col-md-6">
+                                <div class="demo-box" style="margin: 20px 0;">
+                                    Centered Column
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Vertical Centering Example</h5>
+                    <div class="code-block">
+<code>&lt;div class="row align-items-center" style="min-height: 300px;"&gt;
+    &lt;div class="col-md-6"&gt;
+        &lt;p&gt;This content is centered vertically&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise5-1.html</code></li>
+                        <li>Create a hero section with:
+                            <ul>
+                                <li>Full-height container (use min-height: 100vh)</li>
+                                <li>Centered heading and button both horizontally and vertically</li>
+                                <li>Use <code>.justify-content-center</code> and <code>.align-items-center</code></li>
+                            </ul>
+                        </li>
+                        <li>Add a section showing space-between alignment</li>
+                    </ol>
+                </div>
+
+                <!-- Exercise 5.2 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 5.2: Column Reordering</h2>
+                    <p class="text-muted">Reorder columns on different screen sizes using order utilities</p>
+
+                    <h5 class="mt-4 mb-3">Order Classes</h5>
+                    <p>Bootstrap provides order utilities to change visual order without changing HTML:</p>
+                    <div class="alert alert-info">
+                        <code>.order-1</code> to <code>.order-5</code> - Sets column order<br>
+                        <code>.order-md-2</code> - Change order starting at medium breakpoint<br>
+                        <code>.order-lg-1</code> - Change order starting at large breakpoint
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Code Example</h5>
+                    <div class="code-block">
+<code>&lt;div class="row"&gt;
+    &lt;!-- Desktop: 1st | Mobile: 2nd --&gt;
+    &lt;div class="col-md-8 order-md-1 order-2"&gt;
+        &lt;p&gt;Main Content&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Desktop: 2nd | Mobile: 1st --&gt;
+    &lt;div class="col-md-4 order-md-2 order-1"&gt;
+        &lt;p&gt;Sidebar&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Live Preview - Desktop Layout</h5>
+                    <div style="border: 2px solid #667eea; border-radius: 6px; padding: 15px; background: #f9f9f9;">
+                        <div class="row g-3">
+                            <div class="col-md-8 order-md-1">
+                                <div class="demo-box" style="margin: 0;">1st: Main Content</div>
+                            </div>
+                            <div class="col-md-4 order-md-2">
+                                <div class="demo-box demo-box-2" style="margin: 0;">2nd: Sidebar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Mobile: Reordered</h5>
+                    <p class="text-muted small">On mobile, the order changes (try resizing):</p>
+                    <div style="border: 2px solid #764ba2; border-radius: 6px; padding: 15px; background: #f9f9f9;">
+                        <div class="row g-3">
+                            <div class="col-12 order-2">
+                                <div class="demo-box" style="margin: 0;">2nd on Mobile: Main Content</div>
+                            </div>
+                            <div class="col-12 order-1">
+                                <div class="demo-box demo-box-2" style="margin: 0;">1st on Mobile: Sidebar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Real-World Use Cases</h5>
+                    <ul>
+                        <li>Mobile: Show sidebar first (important on small screens)</li>
+                        <li>Desktop: Show main content first (better for reading flow)</li>
+                        <li>Highlight important sections on mobile</li>
+                        <li>Different content hierarchies for different devices</li>
+                    </ul>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise5-2.html</code></li>
+                        <li>Create a 2-column layout where:
+                            <ul>
+                                <li>Desktop: Main content first (col-md-8), sidebar second (col-md-4)</li>
+                                <li>Mobile: Sidebar appears first (important content on top)</li>
+                                <li>Use proper order classes</li>
+                            </ul>
+                        </li>
+                        <li>Test on mobile and desktop</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Quick Reference</h5>
+                    </div>
+                    <div class="card-body small">
+                        <h6 class="mb-2">Alignment</h6>
+                        <code class="d-block bg-light p-2 rounded mb-2">.justify-content-center</code>
+                        <code class="d-block bg-light p-2 rounded mb-3">.align-items-center</code>
+
+                        <h6 class="mb-2">Combined Centering</h6>
+                        <code class="d-block bg-light p-2 rounded mb-3">.justify-content-center<br>.align-items-center</code>
+
+                        <h6 class="mb-2">Reordering</h6>
+                        <code class="d-block bg-light p-2 rounded mb-2">.order-1, .order-2</code>
+                        <code class="d-block bg-light p-2 rounded mb-2">.order-md-1</code>
+                        <code class="d-block bg-light p-2 rounded">.order-lg-2</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="04-column-layouts.html" class="btn btn-secondary">← Previous</a>
+                <a href="../index.html" class="btn btn-secondary">Back to Modules</a>
+                <a href="06-flexbox.html" class="btn btn-primary float-end">Next Module →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

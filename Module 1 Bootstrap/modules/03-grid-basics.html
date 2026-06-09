@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: Responsive Grid Basics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background: #f8f9fa; padding: 30px 0; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 0; margin-bottom: 40px; }
+        .exercise-section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .exercise-title { color: #667eea; font-weight: 600; font-size: 1.3rem; margin-bottom: 20px; }
+        .code-block { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 6px; overflow-x: auto; margin: 15px 0; }
+        .code-block code { color: #f8f8f2; font-family: 'Courier New', monospace; }
+        .grid-demo { background: #e7f3ff; border: 2px dashed #667eea; padding: 15px; margin: 15px 0; border-radius: 6px; }
+        .grid-col { background: #667eea; color: white; padding: 20px; border-radius: 6px; text-align: center; font-weight: 600; margin-bottom: 10px; }
+        .grid-col-alt { background: #764ba2; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="bi bi-bootstrap-fill"></i> Bootstrap 5 Exercises</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="module-header">
+        <div class="container">
+            <h1>🎯 Module 3: The Magic 12-Column Grid</h1>
+            <p class="lead mb-0">Ready to build responsive layouts? The grid is your best friend! Let's make it click. ✨</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Exercise 3.1 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 3.1: Three-Column Responsive Grid</h2>
+                    <p class="text-muted">Create columns that stack vertically on mobile, two per row on tablets, three on desktops</p>
+
+                    <h5 class="mt-4 mb-3">Understanding Breakpoints</h5>
+                    <table class="table table-sm">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Device</th>
+                                <th>Size</th>
+                                <th>Class Prefix</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mobile</strong></td>
+                                <td>&lt; 576px</td>
+                                <td>None (default)</td>
+                                <td><code>.col-12</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tablet</strong></td>
+                                <td>≥ 576px</td>
+                                <td><code>-sm-</code></td>
+                                <td><code>.col-sm-6</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Small Desktop</strong></td>
+                                <td>≥ 768px</td>
+                                <td><code>-md-</code></td>
+                                <td><code>.col-md-6</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Large Desktop</strong></td>
+                                <td>≥ 992px</td>
+                                <td><code>-lg-</code></td>
+                                <td><code>.col-lg-4</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Extra Large</strong></td>
+                                <td>≥ 1200px</td>
+                                <td><code>-xl-</code></td>
+                                <td><code>.col-xl-3</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5 class="mt-4 mb-3">Complete Code Example</h5>
+                    <div class="code-block">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exercise 3.1: Responsive Grid&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container mt-5"&gt;
+        &lt;h1 class="mb-4"&gt;Three-Column Responsive Layout&lt;/h1&gt;
+        
+        &lt;div class="row g-3"&gt;
+            &lt;!-- Column 1: Full width on mobile, 6 cols on tablet, 4 on desktop --&gt;
+            &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+                &lt;div class="card"&gt;
+                    &lt;div class="card-body"&gt;
+                        &lt;h5 class="card-title"&gt;Column 1&lt;/h5&gt;
+                        &lt;p class="card-text"&gt;Full width on mobile, half on tablet, third on desktop&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+                &lt;div class="card"&gt;
+                    &lt;div class="card-body"&gt;
+                        &lt;h5 class="card-title"&gt;Column 2&lt;/h5&gt;
+                        &lt;p class="card-text"&gt;Responsive and flexible&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+                &lt;div class="card"&gt;
+                    &lt;div class="card-body"&gt;
+                        &lt;h5 class="card-title"&gt;Column 3&lt;/h5&gt;
+                        &lt;p class="card-text"&gt;Try resizing your browser!&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Live Preview</h5>
+                    <div class="grid-demo">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="grid-col">Column 1</div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="grid-col grid-col-alt">Column 2</div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="grid-col">Column 3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Key Concepts Explained</h5>
+                    <ul>
+                        <li><code>.container</code> - Wraps content with responsive max-width</li>
+                        <li><code>.row</code> - Creates a horizontal group of columns</li>
+                        <li><code>.col-*</code> - Defines column width (1-12 units per row)</li>
+                        <li><code>.g-3</code> - Adds gap/spacing between columns</li>
+                        <li>No class on mobile = full width (12 columns)</li>
+                        <li><code>.col-md-6</code> = 50% width starting at medium (768px)</li>
+                        <li><code>.col-lg-4</code> = 33.33% width starting at large (992px)</li>
+                    </ul>
+                </div>
+
+                <!-- Exercise 3.2 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 3.2: Container, Row, Column Usage</h2>
+                    <p class="text-muted">Best practices for using grid classes appropriately</p>
+
+                    <h5 class="mt-4 mb-3">Container Types</h5>
+                    <div class="alert alert-info">
+                        <h6><code>.container</code> - Responsive fixed-width</h6>
+                        <p class="mb-0">Has max-width that changes at each breakpoint. Best for most cases.</p>
+                    </div>
+                    <div class="alert alert-info">
+                        <h6><code>.container-fluid</code> - Full-width</h6>
+                        <p class="mb-0">Takes 100% width of viewport. Use for hero sections or full-screen layouts.</p>
+                    </div>
+                    <div class="alert alert-info">
+                        <h6><code>.container-{breakpoint}</code> - Responsive fluid</h6>
+                        <p class="mb-0">Example: <code>.container-lg</code> - fluid until large breakpoint, then fixed.</p>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Grid Structure Rules</h5>
+                    <div class="alert alert-warning">
+                        <ol>
+                            <li><code>.row</code> must always be INSIDE a <code>.container</code></li>
+                            <li><code>.col</code> must always be INSIDE a <code>.row</code></li>
+                            <li>Never nest rows without columns</li>
+                            <li>A row contains up to 12 columns</li>
+                            <li>Column widths add up: 3 columns of <code>.col-lg-4</code> = full row</li>
+                        </ol>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create a file <code>exercise3-2.html</code></li>
+                        <li>Build a responsive layout with:
+                            <ul>
+                                <li>A header with <code>.container-fluid</code> (full width)</li>
+                                <li>A main content area with <code>.container</code></li>
+                                <li>Multiple rows with different column configurations</li>
+                                <li>At least 2 nested grids (grid inside a column)</li>
+                            </ul>
+                        </li>
+                        <li>Test on different screen sizes</li>
+                        <li>Verify the layout is responsive</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Bootstrap 12-Column Grid</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="small text-muted">Bootstrap divides each row into 12 equal columns:</p>
+                        <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px;">
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                            <div style="background: #667eea; height: 30px; border-radius: 4px;"></div>
+                        </div>
+                        <p class="small text-muted mt-3 mb-0"><strong>Common widths:</strong></p>
+                        <ul class="small text-muted list-unstyled">
+                            <li>4 columns = 33.33% (.col-lg-4)</li>
+                            <li>6 columns = 50% (.col-lg-6)</li>
+                            <li>8 columns = 66.67% (.col-lg-8)</li>
+                            <li>12 columns = 100% (.col-12)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container mt-5 mb-5">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">💪 Grid Master In Training!</h4>
+            <p>Great! You understand the grid now. Everything in responsive design comes down to this. You're halfway there!</p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="02-structure.html" class="btn btn-secondary">← Previous</a>
+                <a href="../index.html" class="btn btn-secondary">Back to Modules</a>
+                <a href="04-column-layouts.html" class="btn btn-primary float-end">Next Module →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

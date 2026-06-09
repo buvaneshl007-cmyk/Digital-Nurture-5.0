@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 11: Cards & Media Objects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background: #f8f9fa; padding: 30px 0; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 0; margin-bottom: 40px; }
+        .exercise-section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .exercise-title { color: #667eea; font-weight: 600; font-size: 1.3rem; margin-bottom: 20px; }
+        .code-block { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 6px; overflow-x: auto; margin: 15px 0; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="bi bi-bootstrap-fill"></i> Bootstrap 5 Exercises</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="module-header">
+        <div class="container">
+            <h1>🎴 Module 11: Cards & Content Layouts</h1>
+            <p class="lead mb-0">Cards are the foundation of modern design. Let's build beautiful ones! 💎</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Exercise 11.1 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 11.1: Profile Card</h2>
+                    <p class="text-muted">Create a profile card using card components</p>
+
+                    <h5 class="mt-4 mb-3">Card Structure</h5>
+                    <ul>
+                        <li><code>.card</code> - Main container</li>
+                        <li><code>.card-img-top</code> - Image at top</li>
+                        <li><code>.card-body</code> - Content area</li>
+                        <li><code>.card-title</code> - Title</li>
+                        <li><code>.card-text</code> - Body text</li>
+                        <li><code>.card-footer</code> - Bottom area</li>
+                    </ul>
+
+                    <h5 class="mt-4 mb-3">Profile Card Code</h5>
+                    <div class="code-block">
+<code>&lt;div class="card" style="width: 300px;"&gt;
+    &lt;img src="image.jpg" class="card-img-top" alt="Profile"&gt;
+    
+    &lt;div class="card-body text-center"&gt;
+        &lt;h5 class="card-title"&gt;John Doe&lt;/h5&gt;
+        &lt;p class="card-text text-muted"&gt;Web Developer&lt;/p&gt;
+        
+        &lt;p class="card-text"&gt;Passionate about creating amazing web experiences.&lt;/p&gt;
+        
+        &lt;div class="d-grid gap-2"&gt;
+            &lt;button class="btn btn-primary"&gt;Follow&lt;/button&gt;
+            &lt;button class="btn btn-outline-primary"&gt;Message&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="card-footer bg-light text-center text-muted"&gt;
+        &lt;small&gt;Member since 2023&lt;/small&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Live Preview</h5>
+                    <div style="padding: 30px; background: #f9f9f9; border-radius: 6px; text-align: center;">
+                        <div class="card" style="width: 300px; margin: 0 auto;">
+                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 150px; border-radius: 6px 6px 0 0;"></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">John Doe</h5>
+                                <p class="card-text text-muted">Web Developer</p>
+                                <p class="card-text small">Passionate about creating amazing web experiences.</p>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary btn-sm">Follow</button>
+                                    <button class="btn btn-outline-primary btn-sm">Message</button>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light text-center text-muted">
+                                <small>Member since 2023</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise11-1.html</code></li>
+                        <li>Create profile cards for 3 people with:
+                            <ul>
+                                <li>Image at top</li>
+                                <li>Name and title</li>
+                                <li>Short bio</li>
+                                <li>Action buttons</li>
+                                <li>Footer info</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Exercise 11.2 -->
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 11.2: Media Object Layout</h2>
+                    <p class="text-muted">Design a media object layout with image and content</p>
+
+                    <h5 class="mt-4 mb-3">Media Object Pattern</h5>
+                    <p>Combine image with text/content aligned horizontally:</p>
+
+                    <div class="code-block">
+<code>&lt;div class="media"&gt;
+    &lt;img src="avatar.jpg" class="me-3" style="width: 64px;"&gt;
+    &lt;div class="media-body"&gt;
+        &lt;h5&gt;Media heading&lt;/h5&gt;
+        Some content goes here...
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Live Example - Comment List</h5>
+                    <div style="padding: 20px; background: #f9f9f9; border-radius: 6px; max-width: 500px;">
+                        <div class="d-flex mb-4">
+                            <div style="width: 60px; height: 60px; background: #667eea; border-radius: 50%; margin-right: 15px;"></div>
+                            <div class="flex-grow-1">
+                                <h6 class="mt-0">Sarah Anderson</h6>
+                                <p class="text-muted small mb-1">Great article! Very informative and well-written.</p>
+                                <small class="text-muted">2 hours ago</small>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div style="width: 60px; height: 60px; background: #764ba2; border-radius: 50%; margin-right: 15px;"></div>
+                            <div class="flex-grow-1">
+                                <h6 class="mt-0">Mike Johnson</h6>
+                                <p class="text-muted small mb-1">This helped me a lot. Thanks for sharing!</p>
+                                <small class="text-muted">1 hour ago</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Media Code with Flexbox</h5>
+                    <div class="code-block">
+<code>&lt;div class="d-flex mb-3"&gt;
+    &lt;img src="avatar.jpg" style="width: 60px;" class="me-3"&gt;
+    &lt;div class="flex-grow-1"&gt;
+        &lt;h6&gt;Username&lt;/h6&gt;
+        &lt;p class="text-muted small"&gt;Comment text...&lt;/p&gt;
+        &lt;small class="text-muted"&gt;Time ago&lt;/small&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise11-2.html</code></li>
+                        <li>Create a media object layout with:
+                            <ul>
+                                <li>Avatar image (left or right)</li>
+                                <li>Username/title</li>
+                                <li>Content text</li>
+                                <li>Timestamp</li>
+                                <li>Create 3+ media items (like comments or posts)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Card Variations</h5>
+                    </div>
+                    <div class="card-body small">
+                        <h6>.card-header</h6>
+                        <p class="text-muted">Top section</p>
+
+                        <h6>.card-body</h6>
+                        <p class="text-muted">Main content</p>
+
+                        <h6>.card-footer</h6>
+                        <p class="text-muted">Bottom section</p>
+
+                        <h6>.card-img-top</h6>
+                        <p class="text-muted">Image at top</p>
+
+                        <h6>.card-img-bottom</h6>
+                        <p class="text-muted">Image at bottom</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container mt-5 mb-5">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">🌟 Card Creator!</h4>
+            <p>Cards are literally the foundation of modern design. You've mastered one of the most powerful Bootstrap components. Your designs are about to level up! 📦</p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="10-navbar.html" class="btn btn-secondary">← Previous</a>
+                <a href="../index.html" class="btn btn-secondary">Back to Modules</a>
+                <a href="12-spacing.html" class="btn btn-primary float-end">Next Module →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

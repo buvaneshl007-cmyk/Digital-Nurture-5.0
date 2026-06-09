@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 18: Bootstrap JavaScript Plugins</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background: #f8f9fa; padding: 30px 0; }
+        .module-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 0; margin-bottom: 40px; }
+        .exercise-section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; }
+        .exercise-title { color: #667eea; font-weight: 600; font-size: 1.3rem; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="bi bi-bootstrap-fill"></i> Bootstrap 5 Exercises</a>
+        </div>
+    </nav>
+
+    <div class="module-header">
+        <div class="container">
+            <h1>⚡ Module 18: Interactive Magic</h1>
+            <p class="lead mb-0">Time for interactivity! Modals, accordions, and more. Make your site come alive! 🎬</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 18.1: Modal Popup</h2>
+                    <p class="text-muted">Add a modal popup triggered by a button</p>
+
+                    <h5 class="mt-4 mb-3">Live Modal Demo</h5>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#demoModal">
+                        Open Modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="demoModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Modal Title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>This is a Bootstrap modal dialog. Click the close button or outside the modal to dismiss it.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Modal Code</h5>
+                    <pre><code>&lt;!-- Button to open modal --&gt;
+&lt;button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"&gt;
+    Open Modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="myModal"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;h5 class="modal-title"&gt;Modal Title&lt;/h5&gt;
+                &lt;button class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                Your content here
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise18-1.html</code></li>
+                        <li>Create multiple modals:
+                            <ul>
+                                <li>Modal for confirmation</li>
+                                <li>Modal for login form</li>
+                                <li>Modal for notification</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="exercise-section">
+                    <h2 class="exercise-title">Exercise 18.2: Accordion</h2>
+                    <p class="text-muted">Create a collapsible accordion</p>
+
+                    <h5 class="mt-4 mb-3">Accordion Example</h5>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Accordion Item 1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Accordion Item 2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Accordion Item 3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> Nothing to see here!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Accordion Code</h5>
+                    <pre><code>&lt;div class="accordion" id="myAccordion"&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header"&gt;
+            &lt;button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#item1"&gt;
+                Item 1
+            &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="item1" class="accordion-collapse collapse show" data-bs-parent="#myAccordion"&gt;
+            &lt;div class="accordion-body"&gt;
+                Content 1
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h5 class="mt-4 mb-3">Your Task</h5>
+                    <ol>
+                        <li>Create <code>exercise18-2.html</code></li>
+                        <li>Create an FAQ accordion with:
+                            <ul>
+                                <li>5+ questions</li>
+                                <li>Detailed answers</li>
+                                <li>Only one item open at a time</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Other Plugins</h5>
+                    </div>
+                    <div class="card-body small">
+                        <p><strong>Tooltip:</strong> Show info on hover</p>
+                        <p><strong>Popover:</strong> Extended tooltip</p>
+                        <p><strong>Dropdown:</strong> Toggle dropdown</p>
+                        <p><strong>Carousel:</strong> Image slider</p>
+                        <p><strong>Scrollspy:</strong> Auto-highlight nav</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">🔥 Interactivity Master!</h4>
+            <p>Modals, accordions, carousels - you just unlocked the interactive side of Bootstrap! Your websites are about to feel ALIVE! One more module to go! 💪</p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="17-icons.html" class="btn btn-secondary">← Previous</a>
+                <a href="../index.html" class="btn btn-secondary">Back to Modules</a>
+                <a href="19-sass.html" class="btn btn-primary float-end">Final Module →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
