@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex13 - Debugging & Testing</title>
+    <style>
+        body { font-family: Georgia, serif; background: #f5f0e8; padding: 40px 20px; }
+        h2 { color: #0d3b6e; margin-bottom: 20px; }
+        .box { background: white; padding: 30px; border-radius: 6px; max-width: 520px; border: 1px solid #ddd; margin-bottom: 24px; }
+        .box h3 { color: #1a6fbf; font-size: 15px; margin-bottom: 14px; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 14px; margin-bottom: 4px; font-weight: bold; color: #333; }
+        .form-group input, .form-group select { width: 100%; padding: 8px 12px; border: 1px solid #bbb; border-radius: 4px; font-size: 14px; font-family: Georgia, serif; }
+        button { padding: 9px 22px; background: #0d3b6e; color: white; border: none; border-radius: 4px; font-size: 14px; cursor: pointer; font-family: Georgia, serif; }
+        button:hover { background: #1a6fbf; }
+        #logOutput { background: #1e1e1e; color: #9cdcfe; font-family: 'Courier New', monospace; font-size: 13px; padding: 14px; border-radius: 4px; max-height: 200px; overflow-y: auto; margin-top: 14px; }
+        #statusMsg { margin-top: 14px; font-size: 14px; font-weight: bold; }
+        .success { color: #2a9d8f; }
+        .error { color: #c0392b; }
+    </style>
+</head>
+<body>
+    <h2>Ex13 – Debugging & Testing</h2>
+    <div class="box">
+        <h3>Registration Form (with Debug Logging)</h3>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+            <label for="event">Event</label>
+            <select id="event">
+                <option value="">-- Select --</option>
+                <option value="Cultural Fest">Cultural Fest</option>
+                <option value="Health Camp">Health Camp</option>
+                <option value="Sports Meet">Sports Meet</option>
+            </select>
+        </div>
+        <button onclick="submitWithDebug()">Submit & Debug</button>
+        <div id="statusMsg"></div>
+    </div>
+    <div class="box">
+        <h3>Debug Log Output</h3>
+        <p style="font-size:13px;color:#777;margin-bottom:10px;">All steps are logged below and in the browser Console (F12).</p>
+        <div id="logOutput">Waiting for submission...</div>
+    </div>
+    <script src="Ex13_DebuggingTesting.js"></script>
+</body>
+</html>

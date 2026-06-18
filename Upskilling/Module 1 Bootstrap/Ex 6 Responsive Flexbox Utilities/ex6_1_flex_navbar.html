@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ex 6.1 – Flex Responsive Navbar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light">
+
+  <!--
+    d-flex          → display: flex
+    flex-column     → stacks items vertically on mobile
+    flex-md-row     → switches to horizontal row on md+ (tablet/desktop)
+    align-items-center → vertically centers all items
+    justify-content-between → spreads brand and links to opposite ends
+  -->
+  <div class="bg-dark text-white py-3 px-4 mb-5">
+    <h6 class="text-warning mb-3 small">Exercise 6.1 – d-flex flex-column flex-md-row</h6>
+
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+
+      <!-- Brand -->
+      <span class="fs-5 fw-bold text-primary">🚀 FlexBrand</span>
+
+      <!-- Nav Links -->
+      <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center">
+        <a href="#" class="text-white text-decoration-none">Home</a>
+        <a href="#" class="text-white text-decoration-none">About</a>
+        <a href="#" class="text-white text-decoration-none">Services</a>
+        <a href="#" class="text-white text-decoration-none">Contact</a>
+      </div>
+
+      <!-- CTA Button -->
+      <button class="btn btn-primary btn-sm">Sign Up Free</button>
+    </div>
+  </div>
+
+  <!-- Explanation -->
+  <div class="container">
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white fw-bold">How it works</div>
+      <div class="card-body">
+        <table class="table table-bordered table-sm mb-0">
+          <thead class="table-secondary">
+            <tr><th>Class</th><th>CSS Property</th><th>Effect</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>d-flex</code></td><td>display: flex</td><td>Activates flexbox</td></tr>
+            <tr><td><code>flex-column</code></td><td>flex-direction: column</td><td>Stacks vertically (mobile)</td></tr>
+            <tr><td><code>flex-md-row</code></td><td>flex-direction: row (on md+)</td><td>Horizontal on tablet/desktop</td></tr>
+            <tr><td><code>align-items-center</code></td><td>align-items: center</td><td>Vertical centering</td></tr>
+            <tr><td><code>justify-content-between</code></td><td>justify-content: space-between</td><td>Pushes items apart</td></tr>
+            <tr><td><code>gap-3</code></td><td>gap: 1rem</td><td>Space between flex children</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

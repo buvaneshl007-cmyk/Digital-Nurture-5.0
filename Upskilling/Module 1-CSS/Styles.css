@@ -1,0 +1,840 @@
+/* ============================================================
+   Greenfield Community Event Portal — External Stylesheet
+   Covers: CSS3 Tasks 1–11
+   ============================================================ */
+
+/* ── Task 1 & 3: Universal selector reset (margin/padding) ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── CSS Custom Properties (design tokens) ── */
+:root {
+  --navy:        #0d1b2a;
+  --teal:        #1b7a6e;
+  --teal-dark:   #155f55;
+  --gold:        #d4a843;
+  --cream:       #f5f0e8;
+  --white:       #ffffff;
+  --red:         #c0392b;
+  --light-teal:  #e8f5f3;
+  --border:      #cccccc;
+  --shadow:      rgba(13, 27, 42, 0.10);
+}
+
+/* ── Task 4 & 5: Body — background image with fallback color, Google Font ── */
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--navy);
+  background-color: var(--cream);
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background-repeat: repeat;
+}
+
+/* ── Task 3 & 5: Element selectors — h1, h2, h3 grouped typography ── */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
+}
+
+/* ── Task 3: Element selector — all h2 styled consistently ── */
+h2 {
+  font-size: 1.9rem;
+  color: var(--teal);
+  margin-bottom: 1.2rem;
+  text-transform: capitalize;
+}
+
+/* ── Task 3 & 5: Grouping selector — h3 and p share base styles ── */
+h3, p {
+  margin-bottom: 0.6rem;
+}
+
+/* ── Task 5: Paragraph readability ── */
+p {
+  font-size: 0.97rem;
+  letter-spacing: 0.1px;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+/* Navigation bar styles */
+nav {
+  background-color: var(--navy);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 62px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+nav .brand {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+/* ── Task 6: Nav list — remove bullets, flex layout ── */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 0;
+}
+
+/* ── Task 6: List item spacing ── */
+nav ul li {
+  padding: 0;
+  margin: 0 0.1rem;
+}
+
+/* ── Task 6: Link pseudo-classes — :link, :visited, :hover, :active ── */
+nav ul li a:link {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  padding: 6px 14px;
+  border-radius: 3px;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav ul li a:visited {
+  color: #c9c3b8;
+}
+
+nav ul li a:hover {
+  color: var(--gold);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+nav ul li a:active {
+  color: var(--white);
+  background: rgba(212, 168, 67, 0.25);
+}
+
+/* Help external link */
+nav .help-link:link,
+nav .help-link:visited {
+  color: var(--gold);
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  padding: 5px 12px;
+  border-radius: 3px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav .help-link:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+nav .help-link:active {
+  background: #b8912e;
+}
+
+/* Hamburger toggle (mobile) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cream);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ============================================================
+   SECTIONS — Layout & Spacing
+   ============================================================ */
+
+/* Section base */
+section {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section + section {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ── Task 4: Section header gradient ── */
+.section-header {
+  background: linear-gradient(135deg, var(--teal) 0%, #0f4f47 100%);
+  color: var(--white);
+  padding: 0.55rem 1.2rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 1.4rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   WELCOME BANNER — Task 3: ID selector #mainHeader
+   ============================================================ */
+
+/* ID selector for the main welcome banner */
+#mainHeader {
+  background: linear-gradient(120deg, #1565c0 0%, #0d47a1 60%, #0a2f6b 100%);
+  color: var(--white);
+  padding: 2rem 2.2rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 4px 18px rgba(21, 101, 192, 0.3);
+}
+
+#mainHeader h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+#mainHeader p {
+  font-size: 0.95rem;
+  opacity: 0.88;
+  margin-bottom: 0;
+}
+
+/* ── Task 1: Inline style example demonstrated via this class ── */
+.highlight {
+  background-color: #fff9c4;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ── Task 3: Class selector .eventCard ── */
+.eventCard {
+  background: var(--white);
+  border: 1px solid #e0ddd6;
+  border-radius: 6px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* ── Task 8: Box model — border, padding, margin on .eventCard ── */
+.eventCard {
+  border: 2px solid #e0ddd6;
+  padding: 1.2rem 1.4rem;
+  margin: 0.8rem 0;
+  outline: none;
+}
+
+.eventCard:focus-within {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.eventCard:hover {
+  box-shadow: 0 6px 20px rgba(27, 122, 110, 0.14);
+  transform: translateY(-2px);
+}
+
+/* ── Task 2: CTA button — formatted with comments ── */
+
+/* Style for main CTA button */
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* Standard teal button */
+.btn {
+  background-color: var(--teal);
+  color: var(--white);
+  border: none;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--teal-dark);
+}
+
+/* Outline variant button */
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--teal);
+  color: var(--teal);
+  margin-left: 10px;
+}
+
+.btn-outline:hover {
+  background: var(--light-teal);
+}
+
+/* ============================================================
+   GALLERY TABLE — Tasks 3, 4, 7
+   ============================================================ */
+
+/* Table styles — borders, padding, alignment */
+.gallery-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border: 1px solid #d0ccc4;
+}
+
+/* Table header styling */
+.gallery-table th {
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color: var(--white);
+  padding: 10px 12px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+  border: 1px solid #178070;
+}
+
+/* Table data cells */
+.gallery-table td {
+  padding: 10px 8px;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid #ddd;
+}
+
+/* ── Task 7: Zebra striping — nth-child(even) ── */
+.gallery-table tbody tr:nth-child(even) {
+  background-color: rgba(27, 122, 110, 0.05);
+}
+
+.gallery-table tbody tr:hover {
+  background-color: rgba(27, 122, 110, 0.10);
+}
+
+/* Event images with borders */
+.event-img {
+  width: 100%;
+  max-width: 280px;
+  height: 160px;
+  object-fit: cover;
+  border: 3px solid var(--teal);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s;
+  display: block;
+  margin: 0 auto;
+}
+
+.event-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Image caption text */
+.img-caption {
+  font-size: 0.82rem;
+  color: #666;
+  margin-top: 6px;
+  font-style: italic;
+  letter-spacing: 0.1px;
+}
+
+/* ============================================================
+   FORM STYLES — Tasks 3, 5, 8
+   ============================================================ */
+
+/* Form wrapper card */
+.form-wrapper {
+  background: var(--white);
+  padding: 2rem 2.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px var(--shadow);
+  max-width: 680px;
+}
+
+/* Individual form group */
+.form-group {
+  margin-bottom: 1.15rem;
+}
+
+/* Form labels */
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 5px;
+  color: var(--navy);
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+/* Input, select, textarea base */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 9px 13px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fafaf8;
+  color: var(--navy);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+/* ── Task 8: Outline on focused form fields ── */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 3px solid rgba(27, 122, 110, 0.35);
+  outline-offset: 1px;
+  border-color: var(--teal);
+  background: #ffffff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Form output confirmation */
+output {
+  display: block;
+  margin-top: 1rem;
+  padding: 10px 14px;
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+  border-radius: 3px;
+  font-weight: 600;
+  color: #2e7d32;
+  font-size: 0.9rem;
+}
+
+/* Phone field valid/invalid states */
+#phoneField.invalid { border-color: var(--red); background: #fff5f5; }
+#phoneField.valid   { border-color: #388e3c; background: #f5fff5; }
+
+/* Character counter */
+#charCount {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+  margin-top: 3px;
+}
+
+/* Fee display */
+#feeDisplay {
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--teal);
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+/* ============================================================
+   VIDEO SECTION
+   ============================================================ */
+
+/* Video container */
+#videoWrapper {
+  max-width: 640px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+#videoWrapper iframe {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--teal);
+  border-radius: 6px;
+}
+
+/* Video ready message */
+#videoStatus {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* ============================================================
+   STORAGE / PREFERENCES SECTION
+   ============================================================ */
+
+/* Storage status text */
+#storageStatus {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  min-height: 1.3em;
+}
+
+/* ============================================================
+   GEOLOCATION SECTION
+   ============================================================ */
+
+/* Location output box */
+#locationOutput {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: var(--light-teal);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: var(--navy);
+  min-height: 1.5em;
+  border-left: 3px solid var(--teal);
+}
+
+/* ============================================================
+   TASK 9: COMMUNITY BULLETIN — Multi-column layout
+   ============================================================ */
+
+/* Multi-column newspaper-style bulletin */
+.bulletin-columns {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid #bbb;
+  text-align: justify;
+  font-size: 0.93rem;
+  line-height: 1.75;
+  margin-top: 1rem;
+}
+
+/* Prevent orphaned headings in columns */
+.bulletin-columns h3 {
+  column-span: none;
+  break-after: avoid;
+  color: var(--teal);
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   ADMIN EVENTS TABLE — Task 7
+   ============================================================ */
+
+/* Admin table base */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Admin table header */
+.admin-table th {
+  background-color: var(--navy);
+  color: var(--white);
+  padding: 11px 14px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* Admin table cells */
+.admin-table td {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Zebra striping using nth-child(even) */
+.admin-table tbody tr:nth-child(even) {
+  background-color: #f0f4f3;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #dff0ee;
+}
+
+/* ============================================================
+   DEBUG CONSOLE PANEL — Task 11
+   ============================================================ */
+
+/* On-page debug log */
+#debugLog {
+  background: #1e1e1e;
+  color: #9cdcfe;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82rem;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 12px;
+  white-space: pre-wrap;
+  border: 1px solid #333;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   IMAGE ENLARGE OVERLAY
+   ============================================================ */
+
+/* Overlay backdrop */
+#imgOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+#imgOverlay.active {
+  display: flex;
+}
+
+#imgOverlay img {
+  max-width: 88vw;
+  max-height: 80vh;
+  border: 4px solid var(--white);
+  border-radius: 4px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Close button */
+#imgOverlay span {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+#imgOverlay span:hover {
+  opacity: 1;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+/* Footer base */
+footer {
+  background: var(--navy);
+  color: #9a9fa8;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+  letter-spacing: 0.2px;
+}
+
+/* Footer links */
+footer a:link,
+footer a:visited {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   TASK 8: visibility hidden vs display none demo
+   ============================================================ */
+
+/* Visually hidden but still takes up space */
+.vis-hidden {
+  visibility: hidden;
+}
+
+/* Removed from layout entirely */
+.disp-none {
+  display: none;
+}
+
+/* ============================================================
+   TASK 10: RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+
+/* Tablet — screens up to 900px */
+@media (max-width: 900px) {
+  section {
+    padding: 2.2rem 1.5rem;
+  }
+
+  .gallery-table {
+    font-size: 0.88rem;
+  }
+
+  .event-img {
+    height: 130px;
+  }
+}
+
+/* Mobile — screens smaller than 768px */
+@media (max-width: 768px) {
+  /* Stack nav links vertically */
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.8rem 1.2rem;
+    gap: 0.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    gap: 0;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li a:link,
+  nav ul li a:visited {
+    padding: 10px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: block;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Reduce heading sizes */
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  /* Stack gallery images */
+  .gallery-table,
+  .gallery-table tbody,
+  .gallery-table tr,
+  .gallery-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Reduce image sizes */
+  .event-img {
+    max-width: 100%;
+    height: 180px;
+  }
+
+  /* Fluid form */
+  .form-wrapper {
+    padding: 1.2rem;
+  }
+
+  /* Bulletin becomes single column */
+  .bulletin-columns {
+    column-count: 1;
+  }
+
+  /* Admin table scroll */
+  .admin-table {
+    font-size: 0.8rem;
+  }
+
+  /* Stack banner */
+  #mainHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Video responsive */
+  #videoWrapper iframe {
+    height: 220px;
+  }
+
+  /* Flexible font sizing using vw */
+  body {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  nav {
+    padding: 0.7rem 1rem;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-outline {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+}

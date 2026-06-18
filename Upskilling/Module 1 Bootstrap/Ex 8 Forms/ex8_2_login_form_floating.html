@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ex 8.2 – Login Form (form-floating)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light py-5">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white fw-bold text-center py-3">
+          Exercise 8.2 – Login with form-floating
+        </div>
+        <div class="card-body p-4">
+
+          <!--
+            form-floating:
+            - The label floats above the input when focused or filled
+            - Input MUST come BEFORE the label inside .form-floating
+            - Input MUST have a placeholder (even if empty) and an id
+          -->
+
+          <form>
+
+            <!-- Floating Email -->
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="loginEmail"
+                     placeholder="name@example.com"/>
+              <label for="loginEmail">Email address</label>
+            </div>
+
+            <!-- Floating Password -->
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="loginPass"
+                     placeholder="Password"/>
+              <label for="loginPass">Password</label>
+            </div>
+
+            <!-- Floating Select -->
+            <div class="form-floating mb-3">
+              <select class="form-select" id="loginRole">
+                <option selected disabled value="">Select role</option>
+                <option>Admin</option>
+                <option>Editor</option>
+                <option>Viewer</option>
+              </select>
+              <label for="loginRole">Login as</label>
+            </div>
+
+            <!-- Floating Textarea -->
+            <div class="form-floating mb-3">
+              <textarea class="form-control" id="loginNote"
+                        placeholder="Leave a note" style="height:100px"></textarea>
+              <label for="loginNote">Optional note</label>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="rememberMe"/>
+              <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-success">Log In</button>
+              <a href="#" class="btn btn-outline-secondary">Forgot Password?</a>
+            </div>
+
+            <hr/>
+            <p class="text-center text-muted small mb-0">
+              Don't have an account? <a href="#">Register here</a>
+            </p>
+          </form>
+
+        </div>
+      </div>
+
+      <!-- How it works note -->
+      <div class="alert alert-info mt-3 small">
+        <strong>How form-floating works:</strong><br/>
+        The <code>&lt;input&gt;</code> must come <strong>before</strong> the <code>&lt;label&gt;</code>
+        inside <code>.form-floating</code>. The input also needs a <code>placeholder</code> attribute
+        (even a space " ") for the floating animation to trigger correctly.
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

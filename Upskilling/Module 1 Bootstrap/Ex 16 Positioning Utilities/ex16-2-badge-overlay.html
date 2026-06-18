@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercise 16.2 – Badge Overlay on Image</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light py-5">
+
+  <!--
+    KEY CONCEPT:
+    position-relative → the PARENT becomes the reference point for its
+                         absolutely positioned children.
+    position-absolute → the CHILD is positioned relative to its nearest
+                         position-relative ancestor.
+    top-0, bottom-0, start-0, end-0 → place the child at an edge.
+    translate-middle → offset by 50% in both axes (for corner badges).
+  -->
+
+  <div class="container">
+    <h3 class="fw-bold mb-2">Position Relative & Absolute — Badge Overlays</h3>
+    <p class="text-muted mb-5">Badges are overlaid on images using positioning utilities.</p>
+
+    <div class="row g-5 align-items-start">
+
+      <!-- Example 1: Top-Right corner badge on an image -->
+      <div class="col-6 col-md-3 text-center">
+        <!--
+          position-relative: makes this div the positioning parent.
+          The badge inside will position itself relative to THIS element.
+        -->
+        <div class="position-relative d-inline-block">
+          <img
+            src="https://picsum.photos/seed/aa/180/180"
+            class="rounded shadow"
+            width="180" height="180"
+            alt="Product"
+          />
+          <!--
+            position-absolute: takes the badge OUT of normal flow.
+            top-0 start-100 translate-middle: positions at top-right corner
+            and then shifts inward by 50% in each axis.
+          -->
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            NEW
+          </span>
+        </div>
+        <p class="mt-3 small"><code>top-0 start-100 translate-middle</code><br/>Top-right corner</p>
+      </div>
+
+      <!-- Example 2: Top-Left corner badge -->
+      <div class="col-6 col-md-3 text-center">
+        <div class="position-relative d-inline-block">
+          <img
+            src="https://picsum.photos/seed/bb/180/180"
+            class="rounded shadow"
+            width="180" height="180"
+            alt="Product"
+          />
+          <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-success">
+            SALE
+          </span>
+        </div>
+        <p class="mt-3 small"><code>top-0 start-0 translate-middle</code><br/>Top-left corner</p>
+      </div>
+
+      <!-- Example 3: Bottom-Right corner badge -->
+      <div class="col-6 col-md-3 text-center">
+        <div class="position-relative d-inline-block">
+          <img
+            src="https://picsum.photos/seed/cc/180/180"
+            class="rounded-circle shadow"
+            width="180" height="180"
+            alt="Profile"
+          />
+          <!-- Online status indicator badge at bottom-right -->
+          <span class="position-absolute bottom-0 end-0 translate-middle badge rounded-pill bg-success border border-2 border-white p-2">
+            <span class="visually-hidden">Online</span>
+          </span>
+        </div>
+        <p class="mt-3 small"><code>bottom-0 end-0 translate-middle</code><br/>Online status dot</p>
+      </div>
+
+      <!-- Example 4: Text label overlay at top/bottom edge -->
+      <div class="col-6 col-md-3 text-center">
+        <div class="position-relative d-inline-block">
+          <img
+            src="https://picsum.photos/seed/dd/180/180"
+            class="rounded shadow"
+            width="180" height="180"
+            alt="Product"
+          />
+          <!-- Full-width label at the bottom of the image -->
+          <div class="position-absolute bottom-0 start-0 end-0 bg-dark bg-opacity-75 text-white text-center py-1 rounded-bottom small">
+            ⭐ Top Rated
+          </div>
+        </div>
+        <p class="mt-3 small"><code>bottom-0 start-0 end-0</code><br/>Bottom label bar</p>
+      </div>
+
+    </div><!-- /.row -->
+
+    <!-- ──────────── CART ICON WITH NOTIFICATION BADGE ──────────── -->
+    <hr class="my-5"/>
+    <h5 class="fw-semibold mb-4">Notification Badge on Icon Button</h5>
+    <div class="d-flex gap-4 align-items-center flex-wrap">
+
+      <!-- Cart icon with item count badge -->
+      <div class="position-relative d-inline-block">
+        <button class="btn btn-outline-dark fs-4 px-3 py-2">🛒</button>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:.65rem;">
+          5
+        </span>
+      </div>
+      <span class="small text-muted">Cart with 5 items</span>
+
+      <!-- Bell icon with alert badge -->
+      <div class="position-relative d-inline-block ms-4">
+        <button class="btn btn-outline-secondary fs-4 px-3 py-2">🔔</button>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" style="font-size:.65rem;">
+          12
+        </span>
+      </div>
+      <span class="small text-muted">12 notifications</span>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

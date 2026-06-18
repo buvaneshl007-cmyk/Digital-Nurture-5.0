@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CommunityHub - Event Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      background-color: #f5f0e8;
+    }
+    #welcomeBanner {
+      background-color: #1565c0;
+    }
+    .highlight-internal {
+      background-color: #fff9c4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="brand">CommunityHub</span>
+
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#bulletin">Bulletin</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#admin">Admin</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a class="help-link" href="help.html" target="_blank">Help</a>
+  </nav>
+
+  <main>
+
+    <section id="home">
+
+      <h2 style="color: #c0392b;">Welcome to CommunityHub</h2>
+
+      <div id="mainHeader">
+        <div>
+          <h1>Welcome back, Resident!</h1>
+          <p>Your community. Your events. Stay connected with what's happening around you.</p>
+        </div>
+        <div>
+          <span style="color: #ff6b6b; font-weight: 700; font-size: 1rem;">
+            &#9733; Special Offer: Free registration this weekend only!
+          </span>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.2rem;">
+        Browse upcoming events below. Items marked as
+        <span class="highlight">featured</span> are recommended by the council this month.
+      </p>
+
+      <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">
+        <em>DevTools demo:</em>
+        <span class="vis-hidden">[This text is visibility:hidden — space reserved]</span>
+        <span class="disp-none">[This text is display:none — removed from layout]</span>
+        Open DevTools and toggle these classes to see the difference.
+      </p>
+
+    </section>
+
+    <section id="events">
+      <span class="section-header">Past Events</span>
+      <h2>Community Event Gallery</h2>
+      <p>Double-click any image to enlarge it.</p>
+
+      <table class="gallery-table">
+        <thead>
+          <tr>
+            <th>Summer Fair</th>
+            <th>Park Cleanup</th>
+            <th>Cultural Night</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img
+                class="event-img"
+                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400"
+                alt="Annual Town Fair 2023"
+                title="Annual Town Fair – July 2023"
+                ondblclick="enlargeImage(this)">
+              <p class="img-caption">Annual Town Fair – July 2023</p>
+            </td>
+            <td>
+              <img
+                class="event-img"
+                src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=400"
+                alt="Park Cleanup Drive"
+                title="Park Cleanup Drive – Sept 2023"
+                ondblclick="enlargeImage(this)">
+              <p class="img-caption">Park Cleanup Drive – Sept 2023</p>
+            </td>
+            <td>
+              <img
+                class="event-img"
+                src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400"
+                alt="Cultural Night 2023"
+                title="Cultural Night – Oct 2023"
+                ondblclick="enlargeImage(this)">
+              <p class="img-caption">Cultural Night – Oct 2023</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="event-img"
+                src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400"
+                alt="Dog Walk Charity Event"
+                title="Charity Dog Walk – Nov 2023"
+                ondblclick="enlargeImage(this)">
+              <p class="img-caption">Charity Dog Walk – Nov 2023</p>
+            </td>
+            <td>
+              <img
+                class="event-img"
+                src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400"
+                alt="Tech for All Workshop"
+                title="Tech for All Workshop – Dec 2023"
+                ondblclick="enlargeImage(this)">
+              <p class="img-caption">Tech for All Workshop – Dec 2023</p>
+            </td>
+            <td>
+              <img
+                class="event-img"
+                src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=400"
+                alt="New Year Celebration"
+                title="New Year's Celebration – Jan 2024"
+                ondblclick="enlargeImage(this)">
+              <p class="img-caption">New Year's Celebration – Jan 2024</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section id="bulletin">
+      <span class="section-header">Community Bulletin</span>
+      <h2>Neighbourhood News</h2>
+
+      <div class="bulletin-columns">
+        <h3>Roads &amp; Infrastructure</h3>
+        <p>
+          The council has approved a six-month plan to resurface Maple Avenue and Oak Street.
+          Work begins the first week of next month and is expected to cause minor delays during
+          morning rush hour. Residents are encouraged to use alternative routes via Elm Road
+          or the bypass until completion.
+        </p>
+
+        <h3>Green Spaces Initiative</h3>
+        <p>
+          Volunteers are needed for the autumn planting drive at Riverside Park. Over three
+          hundred native trees and shrubs will be planted to support local wildlife corridors.
+          Sessions run every Saturday morning from 8am to 12pm. All tools and refreshments
+          are provided by the council.
+        </p>
+
+        <h3>Community Centre Update</h3>
+        <p>
+          The refurbished community centre will reopen next month with extended evening hours.
+          New facilities include a recording studio for youth programmes, a coworking area for
+          freelancers, and a commercial kitchen available for hire by local food businesses.
+          Booking opens online from the fifteenth.
+        </p>
+
+        <h3>Safety &amp; Neighbourhood Watch</h3>
+        <p>
+          The neighbourhood watch scheme has expanded to four new streets following a successful
+          pilot. Monthly meetings are held at the fire station and all residents are welcome.
+          The scheme has helped reduce opportunistic vehicle theft by thirty percent this year
+          compared to the same period last year.
+        </p>
+      </div>
+    </section>
+
+    <section id="register">
+      <span class="section-header">Sign Up</span>
+      <h2>Event Registration</h2>
+      <div class="form-wrapper">
+        <form id="registrationForm" onsubmit="handleRegistration(event)">
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="e.g. Sarah Mitchell"
+              required
+              autofocus>
+          </div>
+
+          <div class="form-group">
+            <label for="emailAddr">Email Address</label>
+            <input
+              type="email"
+              id="emailAddr"
+              name="emailAddr"
+              placeholder="you@example.com"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="eventDate">Preferred Date</label>
+            <input
+              type="date"
+              id="eventDate"
+              name="eventDate"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="eventType">Event Type</label>
+            <select id="eventType" name="eventType" required onchange="saveEventPreference(this.value)">
+              <option value="">-- Choose an event --</option>
+              <option value="fair">Town Fair</option>
+              <option value="cleanup">Park Cleanup</option>
+              <option value="cultural">Cultural Night</option>
+              <option value="workshop">Community Workshop</option>
+              <option value="sports">Sports Day</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="regMessage">Additional Notes</label>
+            <textarea
+              id="regMessage"
+              name="regMessage"
+              placeholder="Any accessibility requirements or questions..."></textarea>
+          </div>
+
+          <button type="submit" class="btn">Register Now</button>
+          <a href="#events" class="cta-button" style="margin-left: 10px;">View Events</a>
+        </form>
+        <output id="regOutput"></output>
+      </div>
+    </section>
+
+    <section id="feedback">
+      <span class="section-header">Your Voice</span>
+      <h2>Event Feedback</h2>
+      <div class="form-wrapper">
+
+        <div class="form-group">
+          <label for="phoneField">Phone Number</label>
+          <input
+            type="tel"
+            id="phoneField"
+            placeholder="e.g. 9876543210"
+            onblur="validatePhone(this)">
+          <small id="phoneMsg" style="color: var(--red); font-size: 0.82rem;"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="feedbackEvent">Select Event for Fee Info</label>
+          <select id="feedbackEvent" onchange="showEventFee(this.value)">
+            <option value="">-- Select --</option>
+            <option value="fair">Town Fair</option>
+            <option value="cleanup">Park Cleanup</option>
+            <option value="cultural">Cultural Night</option>
+            <option value="workshop">Community Workshop</option>
+            <option value="sports">Sports Day</option>
+          </select>
+          <div id="feeDisplay"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="feedbackText">Your Feedback</label>
+          <textarea
+            id="feedbackText"
+            placeholder="Share your experience..."
+            onkeyup="countChars(this)"></textarea>
+          <div id="charCount">0 characters</div>
+        </div>
+
+        <button class="btn" onclick="submitFeedback()">Submit Feedback</button>
+      </div>
+    </section>
+
+    <section id="video">
+      <span class="section-header">Watch Now</span>
+      <h2>Event Promo Video</h2>
+      <p>Watch our short promo for the upcoming Town Fair.</p>
+
+      <div id="videoWrapper">
+        <video
+          id="fairVideo"
+          controls
+          width="640"
+          oncanplay="videoReady()">
+          <source
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <p id="videoStatus"></p>
+    </section>
+
+    <section id="preferences">
+      <span class="section-header">Your Settings</span>
+      <h2>Your Preferences</h2>
+      <p>We remember your favourite event type so you don't have to re-select it each time.</p>
+      <p id="storageStatus"></p>
+      <button class="btn" onclick="clearPreferences()">Clear Preferences</button>
+    </section>
+
+    <section id="location">
+      <span class="section-header">Nearby</span>
+      <h2>Find Nearby Events</h2>
+      <p>Allow location access and we'll show you events closest to you.</p>
+      <button class="btn" onclick="findNearbyEvents()">Find Nearby Events</button>
+      <div id="locationOutput"></div>
+    </section>
+
+    <section id="admin">
+      <span class="section-header">Administration</span>
+      <h2>Upcoming Events Schedule</h2>
+
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Fee</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Town Fair</td>
+            <td>15 Feb 2026</td>
+            <td>Central Park</td>
+            <td>Free</td>
+            <td>Open</td>
+          </tr>
+          <tr>
+            <td>Park Cleanup</td>
+            <td>22 Feb 2026</td>
+            <td>Riverside Park</td>
+            <td>Free</td>
+            <td>Open</td>
+          </tr>
+          <tr>
+            <td>Cultural Night</td>
+            <td>1 Mar 2026</td>
+            <td>Town Hall</td>
+            <td>₹120</td>
+            <td>Open</td>
+          </tr>
+          <tr>
+            <td>Community Workshop</td>
+            <td>8 Mar 2026</td>
+            <td>Community Centre</td>
+            <td>₹250</td>
+            <td>Limited</td>
+          </tr>
+          <tr>
+            <td>Sports Day</td>
+            <td>15 Mar 2026</td>
+            <td>Sports Ground</td>
+            <td>₹80</td>
+            <td>Open</td>
+          </tr>
+          <tr>
+            <td>Charity Run</td>
+            <td>22 Mar 2026</td>
+            <td>High Street</td>
+            <td>Free</td>
+            <td>Upcoming</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contact">
+      <span class="section-header">Get in Touch</span>
+      <h2>Contact the Council</h2>
+
+      <div class="eventCard">
+        <h3>Support Office</h3>
+        <p>Reach us at <strong>support@communityhub.com</strong> or call <strong>1-800-HUB-CITY</strong>.</p>
+        <p>Office hours: Mon–Fri, 9am–5pm.</p>
+      </div>
+
+      <div class="eventCard">
+        <h3>Events Team</h3>
+        <p>For event-specific queries: <strong>events@communityhub.com</strong></p>
+        <p>We typically respond within one working day.</p>
+      </div>
+    </section>
+
+    <section id="debug">
+      <span class="section-header">Developer Tools</span>
+      <h2>Debug Console</h2>
+      <p>Mirrors <code>console.log</code> output. Interact with the page to see live entries.</p>
+      <div id="debugLog">-- Console ready. Interact with the page to see logs --</div>
+    </section>
+
+  </main>
+
+  <footer>
+      <p>&copy; 2026 CommunityHub &mdash;
+      <a href="help.html" target="_blank">Help &amp; Support</a>
+    </p>
+  </footer>
+
+  <div id="imgOverlay">
+    <span onclick="closeOverlay()">&times;</span>
+    <img id="overlayImg" src="" alt="Enlarged event photo">
+  </div>
+
+  <script>
+    function logDebug(msg) {
+      var panel = document.getElementById('debugLog');
+      var ts = new Date().toLocaleTimeString();
+      panel.textContent += '\n[' + ts + '] ' + msg;
+      panel.scrollTop = panel.scrollHeight;
+      console.log('[Portal]', msg);
+    }
+
+    logDebug('Page loaded. External stylesheet: styles.css');
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    function handleRegistration(e) {
+      e.preventDefault();
+      var name  = document.getElementById('fullName').value;
+      var event = document.getElementById('eventType').value;
+      var out   = document.getElementById('regOutput');
+      out.value = 'Thank you, ' + name + '! Registered for "' + event + '". Confirmation will be sent to your email.';
+      logDebug('Registration: ' + name + ' → ' + event);
+    }
+
+    function validatePhone(field) {
+      var val    = field.value.trim();
+      var msg    = document.getElementById('phoneMsg');
+      var digits = val.replace(/\D/g, '');
+      if (val === '') { field.className = ''; msg.textContent = ''; return; }
+      if (digits.length >= 10) {
+        field.classList.add('valid');
+        field.classList.remove('invalid');
+        msg.textContent = '';
+        logDebug('Phone valid: ' + val);
+      } else {
+        field.classList.add('invalid');
+        field.classList.remove('valid');
+        msg.textContent = 'Enter a valid 10-digit number.';
+        logDebug('Phone invalid: ' + val);
+      }
+    }
+
+    var eventFees = {
+      fair:     'Entry Fee: ₹0 (Free admission)',
+      cleanup:  'Entry Fee: ₹0 (Volunteer event)',
+      cultural: 'Entry Fee: ₹120 per person',
+      workshop: 'Entry Fee: ₹250 per person',
+      sports:   'Entry Fee: ₹80 per person'
+    };
+
+    function showEventFee(val) {
+      var display = document.getElementById('feeDisplay');
+      display.textContent = val ? eventFees[val] : '';
+      if (val) logDebug('Fee: ' + val + ' → ' + eventFees[val]);
+    }
+
+    function countChars(el) {
+      var count = el.value.length;
+      document.getElementById('charCount').textContent = count + ' character' + (count !== 1 ? 's' : '');
+    }
+
+    function submitFeedback() {
+      var text = document.getElementById('feedbackText').value.trim();
+      if (!text) { alert('Please write some feedback first.'); return; }
+      alert('Thank you! The council will review your feedback shortly.');
+      logDebug('Feedback submitted (' + text.length + ' chars).');
+      document.getElementById('feedbackText').value = '';
+      document.getElementById('charCount').textContent = '0 characters';
+    }
+
+    function enlargeImage(img) {
+      document.getElementById('overlayImg').src = img.src;
+      document.getElementById('imgOverlay').classList.add('active');
+      logDebug('Enlarged: ' + img.alt);
+    }
+
+    function closeOverlay() {
+      document.getElementById('imgOverlay').classList.remove('active');
+    }
+
+    function videoReady() {
+      document.getElementById('videoStatus').textContent = 'Video ready to play!';
+      logDebug('oncanplay fired — video is buffered and ready to play.');
+    }
+
+    window.addEventListener('beforeunload', function(e) {
+      var feedback = document.getElementById('feedbackText').value;
+      var name     = document.getElementById('fullName').value;
+      if (feedback.trim() || name.trim()) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    });
+
+    function saveEventPreference(val) {
+      if (!val) return;
+      localStorage.setItem('preferredEvent', val);
+      sessionStorage.setItem('currentSession', val);
+      document.getElementById('storageStatus').textContent =
+        'Saved preference: "' + val + '" (localStorage).';
+      logDebug('localStorage saved: ' + val);
+    }
+
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      document.getElementById('storageStatus').textContent = 'All preferences cleared.';
+      document.getElementById('eventType').value = '';
+      logDebug('localStorage + sessionStorage cleared.');
+    }
+
+    (function restorePreference() {
+      var saved = localStorage.getItem('preferredEvent');
+      if (!saved) return;
+      var regSel  = document.getElementById('eventType');
+      var feedSel = document.getElementById('feedbackEvent');
+      if (regSel)  regSel.value  = saved;
+      if (feedSel) feedSel.value = saved;
+      document.getElementById('storageStatus').textContent =
+        'Restored preference: "' + saved + '"';
+      logDebug('Restored from localStorage: ' + saved);
+    })();
+
+    function findNearbyEvents() {
+      var output = document.getElementById('locationOutput');
+      output.textContent = 'Requesting your location...';
+      logDebug('Geolocation requested.');
+
+      if (!navigator.geolocation) {
+        output.textContent = 'Geolocation not supported by your browser.';
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        function(pos) {
+          var lat = pos.coords.latitude.toFixed(5);
+          var lon = pos.coords.longitude.toFixed(5);
+          output.textContent = 'Your coordinates: Lat ' + lat + ', Lon ' + lon +
+            '. Showing events within 5 km.';
+          logDebug('Location: ' + lat + ', ' + lon);
+        },
+        function(err) {
+          var reasons = {
+            1: 'Location access denied. Allow permission in browser settings.',
+            2: 'Position unavailable. Check your connection.',
+            3: 'Request timed out. Please try again.'
+          };
+          output.textContent = reasons[err.code] || 'Unknown error.';
+          logDebug('Geolocation error ' + err.code + ': ' + err.message);
+        },
+        { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
+      );
+    }
+
+    var debugState = {
+      pageLoadTime:     new Date().toISOString(),
+      screenWidth:      window.innerWidth + 'px',
+      storageAvailable: typeof Storage !== 'undefined'
+    };
+
+    logDebug('debugState: ' + JSON.stringify(debugState));
+    console.log('Breakpoint target — inspect debugState:', debugState);
+  </script>
+
+</body>
+</html>

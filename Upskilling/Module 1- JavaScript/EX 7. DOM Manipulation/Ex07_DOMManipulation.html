@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex07 - DOM Manipulation</title>
+    <style>
+        body { font-family: Georgia, serif; background: #f5f0e8; padding: 40px 20px; }
+        h2 { color: #0d3b6e; margin-bottom: 20px; }
+        #eventContainer { display: flex; flex-wrap: wrap; gap: 16px; max-width: 760px; }
+        .event-card { background: white; border: 1px solid #c8d8e8; border-radius: 6px; padding: 18px 20px; width: 220px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .event-card h3 { color: #0d3b6e; font-size: 15px; margin-bottom: 6px; }
+        .event-card p { font-size: 13px; color: #666; margin-bottom: 10px; }
+        .event-card .seats { font-weight: bold; font-size: 13px; }
+        .reg-btn { padding: 6px 14px; background: #0d3b6e; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-family: Georgia, serif; margin-right: 6px; }
+        .reg-btn:hover { background: #1a6fbf; }
+        .cancel-btn { padding: 6px 14px; background: #c0392b; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-family: Georgia, serif; }
+        .cancel-btn:hover { background: #922b21; }
+        .full-tag { color: #c0392b; font-size: 12px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Ex07 – DOM Manipulation</h2>
+    <div id="eventContainer"></div>
+    <script src="Ex07_DOMManipulation.js"></script>
+</body>
+</html>

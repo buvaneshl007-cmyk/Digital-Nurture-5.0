@@ -1,0 +1,146 @@
+<!-- ex17-2-icon-buttons.html -->
+<!-- Exercise 17.2: Replace text buttons with icon-only buttons using Bootstrap Icons -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercise 17.2 – Icon-Only Buttons</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light py-5">
+
+  <div class="container">
+    <h3 class="fw-bold mb-2">Icon-Only Buttons</h3>
+    <p class="text-muted mb-5">
+      Text labels replaced with Bootstrap Icons.
+      Use <code>aria-label</code> for accessibility so screen readers
+      can describe the button's purpose.
+    </p>
+
+    <!-- ──────────── 1. BASIC ICON-ONLY BUTTONS ──────────── -->
+    <h5 class="fw-semibold mb-3">1. Basic Icon-Only Buttons</h5>
+    <div class="d-flex flex-wrap gap-2 mb-5 align-items-center">
+
+      <!-- Instead of <button>Save</button> -->
+      <button class="btn btn-primary" aria-label="Save">
+        <i class="bi bi-floppy"></i>
+      </button>
+
+      <!-- Instead of <button>Edit</button> -->
+      <button class="btn btn-warning" aria-label="Edit">
+        <i class="bi bi-pencil-fill"></i>
+      </button>
+
+      <!-- Instead of <button>Delete</button> -->
+      <button class="btn btn-danger" aria-label="Delete">
+        <i class="bi bi-trash3-fill"></i>
+      </button>
+
+      <!-- Instead of <button>Search</button> -->
+      <button class="btn btn-secondary" aria-label="Search">
+        <i class="bi bi-search"></i>
+      </button>
+
+      <!-- Instead of <button>Download</button> -->
+      <button class="btn btn-success" aria-label="Download">
+        <i class="bi bi-download"></i>
+      </button>
+
+      <!-- Instead of <button>Share</button> -->
+      <button class="btn btn-info text-dark" aria-label="Share">
+        <i class="bi bi-share-fill"></i>
+      </button>
+
+      <!-- Instead of <button>Settings</button> -->
+      <button class="btn btn-dark" aria-label="Settings">
+        <i class="bi bi-gear-fill"></i>
+      </button>
+
+    </div>
+
+    <!-- ──────────── 2. OUTLINE ICON-ONLY BUTTONS ──────────── -->
+    <h5 class="fw-semibold mb-3">2. Outline Variant Icon Buttons</h5>
+    <div class="d-flex flex-wrap gap-2 mb-5 align-items-center">
+      <button class="btn btn-outline-primary"   aria-label="Like"><i class="bi bi-heart"></i></button>
+      <button class="btn btn-outline-danger"    aria-label="Dislike"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-success"   aria-label="Bookmark"><i class="bi bi-bookmark"></i></button>
+      <button class="btn btn-outline-warning"   aria-label="Star"><i class="bi bi-star"></i></button>
+      <button class="btn btn-outline-secondary" aria-label="Comment"><i class="bi bi-chat-dots"></i></button>
+      <button class="btn btn-outline-dark"      aria-label="Send"><i class="bi bi-send"></i></button>
+    </div>
+
+    <!-- ──────────── 3. SIZING: btn-sm, default, btn-lg ──────────── -->
+    <h5 class="fw-semibold mb-3">3. Icon Button Sizes</h5>
+    <div class="d-flex flex-wrap gap-2 mb-5 align-items-center">
+      <button class="btn btn-primary btn-sm" aria-label="Camera small"><i class="bi bi-camera"></i></button>
+      <button class="btn btn-primary"        aria-label="Camera default"><i class="bi bi-camera"></i></button>
+      <button class="btn btn-primary btn-lg" aria-label="Camera large"><i class="bi bi-camera"></i></button>
+    </div>
+
+    <!-- ──────────── 4. TOOLBAR — group of icon-only buttons ──────────── -->
+    <h5 class="fw-semibold mb-3">4. Icon Toolbar (btn-group)</h5>
+    <div class="btn-group mb-5" role="toolbar" aria-label="Text formatting toolbar">
+      <button class="btn btn-outline-secondary" aria-label="Bold"><i class="bi bi-type-bold"></i></button>
+      <button class="btn btn-outline-secondary" aria-label="Italic"><i class="bi bi-type-italic"></i></button>
+      <button class="btn btn-outline-secondary" aria-label="Underline"><i class="bi bi-type-underline"></i></button>
+      <button class="btn btn-outline-secondary" aria-label="Strikethrough"><i class="bi bi-type-strikethrough"></i></button>
+      <button class="btn btn-outline-secondary" aria-label="Align left"><i class="bi bi-text-left"></i></button>
+      <button class="btn btn-outline-secondary" aria-label="Align center"><i class="bi bi-text-center"></i></button>
+      <button class="btn btn-outline-secondary" aria-label="Align right"><i class="bi bi-text-right"></i></button>
+      <button class="btn btn-outline-secondary" aria-label="Link"><i class="bi bi-link-45deg"></i></button>
+      <button class="btn btn-outline-secondary" aria-label="Image"><i class="bi bi-image"></i></button>
+    </div>
+
+    <!-- ──────────── 5. ACTION CARD — before & after comparison ──────────── -->
+    <h5 class="fw-semibold mb-4">5. Before vs After — Product Card Buttons</h5>
+    <div class="row g-4">
+
+      <!-- Before: text buttons -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <img src="https://picsum.photos/seed/prod1/400/200" class="card-img-top" alt="Product"/>
+          <div class="card-body">
+            <h5 class="card-title">Product Name</h5>
+            <p class="card-text text-muted small">A great product description here.</p>
+            <!-- Text buttons (before) -->
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary btn-sm">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm">Wishlist</button>
+              <button class="btn btn-outline-secondary btn-sm">Share</button>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-muted small mt-2">BEFORE — text buttons</p>
+      </div>
+
+      <!-- After: icon-only buttons -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <img src="https://picsum.photos/seed/prod1/400/200" class="card-img-top" alt="Product"/>
+          <div class="card-body">
+            <h5 class="card-title">Product Name</h5>
+            <p class="card-text text-muted small">A great product description here.</p>
+            <!-- Icon-only buttons (after) -->
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary btn-sm"          aria-label="Add to Cart"><i class="bi bi-cart-plus"></i></button>
+              <button class="btn btn-outline-danger btn-sm"   aria-label="Add to Wishlist"><i class="bi bi-heart"></i></button>
+              <button class="btn btn-outline-secondary btn-sm" aria-label="Share"><i class="bi bi-share"></i></button>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-muted small mt-2">AFTER — icon-only buttons</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

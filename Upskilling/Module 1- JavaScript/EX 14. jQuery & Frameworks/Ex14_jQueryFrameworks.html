@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex14 - jQuery & Frameworks</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Georgia, serif; background: #f5f0e8; padding: 40px 20px; }
+        h2 { color: #0d3b6e; margin-bottom: 20px; }
+        .controls { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+        .controls button { padding: 9px 20px; background: #0d3b6e; color: white; border: none; border-radius: 4px; font-size: 14px; cursor: pointer; font-family: Georgia, serif; }
+        .controls button:hover { background: #1a6fbf; }
+        #eventContainer { display: flex; flex-wrap: wrap; gap: 14px; max-width: 760px; }
+        .event-card { background: white; border: 1px solid #c8d8e8; border-radius: 6px; padding: 16px 20px; width: 210px; display: none; }
+        .event-card h3 { color: #0d3b6e; font-size: 15px; margin-bottom: 6px; }
+        .event-card p { font-size: 13px; color: #666; margin-bottom: 10px; }
+        .event-card .reg-btn { padding: 6px 14px; background: #0d3b6e; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-family: Georgia, serif; }
+        .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; background: #eaf2fb; color: #0d3b6e; margin-bottom: 6px; }
+        #confirmation { display: none; margin-top: 20px; max-width: 420px; padding: 12px 16px; background: rgba(42,157,143,0.1); border: 1px solid #2a9d8f; border-radius: 4px; font-size: 14px; color: #1d6a5e; }
+        .note { font-size: 13px; color: #555; margin-top: 30px; max-width: 560px; background: white; padding: 16px 20px; border-radius: 6px; border: 1px solid #ddd; line-height: 1.7; }
+        .note strong { color: #0d3b6e; }
+    </style>
+</head>
+<body>
+    <h2>Ex14 – jQuery & JS Frameworks</h2>
+    <div class="controls">
+        <button id="showAllBtn">Show All Events</button>
+        <button id="hideAllBtn">Hide All Events</button>
+    </div>
+    <div id="eventContainer">
+        <div class="event-card" id="card1">
+            <span class="badge">cultural</span>
+            <h3>Cultural Fest</h3>
+            <p>Date: July 12 | Seats: 5</p>
+            <button class="reg-btn" data-event="Cultural Fest">Register</button>
+        </div>
+        <div class="event-card" id="card2">
+            <span class="badge">health</span>
+            <h3>Health Camp</h3>
+            <p>Date: July 19 | Seats: 8</p>
+            <button class="reg-btn" data-event="Health Camp">Register</button>
+        </div>
+        <div class="event-card" id="card3">
+            <span class="badge">sports</span>
+            <h3>Sports Meet</h3>
+            <p>Date: August 15 | Seats: 6</p>
+            <button class="reg-btn" data-event="Sports Meet">Register</button>
+        </div>
+        <div class="event-card" id="card4">
+            <span class="badge">food</span>
+            <h3>Food Festival</h3>
+            <p>Date: August 22 | Seats: 3</p>
+            <button class="reg-btn" data-event="Food Festival">Register</button>
+        </div>
+    </div>
+    <div id="confirmation"></div>
+    <div class="note">
+        <strong>Why move to React or Vue?</strong><br>
+        jQuery is great for quick DOM tasks but gets hard to manage as apps grow larger.
+        React and Vue use a component-based approach where each piece of UI manages its own
+        state and logic — making large apps easier to build, test, and maintain. React uses
+        a virtual DOM for efficient updates; Vue offers two-way data binding out of the box.
+        Both have rich ecosystems and are widely used in production today.
+    </div>
+    <script src="Ex14_jQueryFrameworks.js"></script>
+</body>
+</html>

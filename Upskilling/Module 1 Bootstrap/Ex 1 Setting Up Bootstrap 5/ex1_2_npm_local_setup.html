@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ex 1.2 – Bootstrap via Local/npm Files</title>
+ <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="bg-secondary bg-opacity-10">
+
+  <div class="container py-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-success text-white">
+        <h4 class="mb-0">Exercise 1.2 – Local Bootstrap Setup</h4>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          Bootstrap is loaded from local files installed via <code>npm install bootstrap</code>.
+          This is the recommended approach for production projects where you want to
+          customize or bundle Bootstrap yourself.
+        </p>
+        <ul class="list-group list-group-flush mb-3">
+          <li class="list-group-item"> CSS: <code>node_modules/bootstrap/dist/css/bootstrap.min.css</code></li>
+          <li class="list-group-item"> JS:  <code>node_modules/bootstrap/dist/js/bootstrap.bundle.min.js</code></li>
+        </ul>
+        <button class="btn btn-success">Works Locally!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS from local node_modules -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!--
+    ALTERNATIVE: Downloaded files:
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  -->
+</body>
+</html>

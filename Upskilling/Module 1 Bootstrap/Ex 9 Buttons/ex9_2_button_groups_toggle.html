@@ -1,0 +1,104 @@
+<!-- File: ex9_2_button_groups_toggle.html -->
+<!-- Exercise 9.2: Button groups using btn-group, toggle buttons with checkboxes -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ex 9.2 – Button Groups & Toggle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light py-5">
+<div class="container">
+  <h2 class="fw-bold mb-5 border-bottom pb-2">Exercise 9.2 – Button Groups & Toggle Buttons</h2>
+
+  <!-- Basic btn-group -->
+  <h5 class="text-secondary mb-3">Basic btn-group</h5>
+  <div class="btn-group mb-5" role="group">
+    <button class="btn btn-primary">Left</button>
+    <button class="btn btn-primary">Center</button>
+    <button class="btn btn-primary">Right</button>
+  </div>
+
+  <!-- Mixed styles group -->
+  <h5 class="text-secondary mb-3">Mixed Outline Group</h5>
+  <div class="btn-group mb-5">
+    <button class="btn btn-outline-danger">Delete</button>
+    <button class="btn btn-outline-warning">Archive</button>
+    <button class="btn btn-outline-success">Publish</button>
+  </div>
+
+  <!-- btn-toolbar -->
+  <h5 class="text-secondary mb-3">btn-toolbar (grouped groups)</h5>
+  <div class="btn-toolbar gap-2 mb-5" role="toolbar">
+    <div class="btn-group">
+      <button class="btn btn-secondary">« First</button>
+      <button class="btn btn-secondary">‹ Prev</button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-outline-secondary">1</button>
+      <button class="btn btn-outline-secondary active">2</button>
+      <button class="btn btn-outline-secondary">3</button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-secondary">Next ›</button>
+      <button class="btn btn-secondary">Last »</button>
+    </div>
+  </div>
+
+  <!-- Vertical btn-group -->
+  <h5 class="text-secondary mb-3">Vertical Group (btn-group-vertical)</h5>
+  <div class="btn-group-vertical mb-5">
+    <button class="btn btn-info text-white">Dashboard</button>
+    <button class="btn btn-info text-white">Reports</button>
+    <button class="btn btn-info text-white">Settings</button>
+    <button class="btn btn-info text-white">Logout</button>
+  </div>
+
+  <!-- Toggle buttons — Checkbox style -->
+  <h5 class="text-secondary mb-3">Toggle Buttons (Checkbox — multiple selection)</h5>
+  <div class="btn-group mb-5" role="group">
+    <input type="checkbox" class="btn-check" id="chkBold" autocomplete="off"/>
+    <label class="btn btn-outline-primary" for="chkBold">Bold</label>
+
+    <input type="checkbox" class="btn-check" id="chkItalic" autocomplete="off" checked/>
+    <label class="btn btn-outline-primary" for="chkItalic">Italic</label>
+
+    <input type="checkbox" class="btn-check" id="chkUnder" autocomplete="off"/>
+    <label class="btn btn-outline-primary" for="chkUnder">Underline</label>
+  </div>
+
+  <!-- Toggle buttons — Radio style -->
+  <h5 class="text-secondary mb-3">Radio Toggle Buttons (single selection)</h5>
+  <div class="btn-group mb-5" role="group">
+    <input type="radio" class="btn-check" name="view" id="viewList" autocomplete="off" checked/>
+    <label class="btn btn-outline-secondary" for="viewList">📋 List</label>
+
+    <input type="radio" class="btn-check" name="view" id="viewGrid" autocomplete="off"/>
+    <label class="btn btn-outline-secondary" for="viewGrid">⊞ Grid</label>
+
+    <input type="radio" class="btn-check" name="view" id="viewMap" autocomplete="off"/>
+    <label class="btn btn-outline-secondary" for="viewMap">🗺 Map</label>
+  </div>
+
+  <!-- Group with dropdown -->
+  <h5 class="text-secondary mb-3">Button Group with Split Dropdown</h5>
+  <div class="btn-group">
+    <button class="btn btn-success">Save</button>
+    <button class="btn btn-success dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Save & Publish</a></li>
+      <li><a class="dropdown-item" href="#">Save as Draft</a></li>
+      <li><hr class="dropdown-divider"/></li>
+      <li><a class="dropdown-item text-danger" href="#">Discard</a></li>
+    </ul>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

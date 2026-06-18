@@ -1,0 +1,179 @@
+<!-- ex19-1-sass-setup.html -->
+<!--
+  Exercise 19.1: Set up a Bootstrap 5 project with Sass using npm.
+
+  SETUP INSTRUCTIONS (run these in your terminal):
+  ─────────────────────────────────────────────────
+  Step 1: Create project and initialize npm
+    mkdir my-bootstrap-sass-project
+    cd my-bootstrap-sass-project
+    npm init -y
+
+  Step 2: Install Bootstrap (includes Sass source files) and Sass compiler
+    npm install bootstrap
+    npm install --save-dev sass
+
+  Step 3: Create your custom Sass entry file
+    mkdir scss
+    touch scss/custom.scss   ← (see the custom.scss content in this file below)
+
+  Step 4: Add build script to package.json
+    "scripts": {
+      "build-css": "sass scss/custom.scss dist/css/custom.css --no-source-map",
+      "watch-css": "sass scss/custom.scss dist/css/custom.css --watch"
+    }
+
+  Step 5: Compile
+    npm run build-css        ← one-time compile
+    npm run watch-css        ← watch for changes and recompile
+
+  Step 6: Link compiled CSS in your HTML
+    <link rel="stylesheet" href="dist/css/custom.css"/>
+
+  ─────────────────────────────────────────────────
+  PROJECT STRUCTURE after setup:
+  my-bootstrap-sass-project/
+  ├── node_modules/
+  │   └── bootstrap/
+  │       └── scss/          ← Bootstrap's Sass source files
+  ├── scss/
+  │   └── custom.scss        ← YOUR entry file (imports Bootstrap)
+  ├── dist/
+  │   └── css/
+  │       └── custom.css     ← compiled output
+  ├── index.html
+  └── package.json
+  ─────────────────────────────────────────────────
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercise 19.1 – Bootstrap Sass Setup</title>
+  <!--
+    In a real project after running `npm run build-css`, link:
+    <link rel="stylesheet" href="dist/css/custom.css"/>
+
+    For this standalone demo, we use the CDN:
+  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    /* Demo styles to show code blocks nicely */
+    pre { background: #1e1e2e; color: #cdd6f4; padding: 1.25rem; border-radius: .5rem; font-size: .85rem; overflow-x:auto; }
+    .step-number { width:32px; height:32px; border-radius:50%; background:#0d6efd; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:700; flex-shrink:0; }
+  </style>
+</head>
+<body class="bg-light py-5">
+
+  <div class="container" style="max-width:800px;">
+    <h3 class="fw-bold mb-2">Exercise 19.1 – Bootstrap 5 + Sass Project Setup</h3>
+    <p class="text-muted mb-4">
+      Follow the steps below to scaffold a Bootstrap 5 project that uses
+      Sass for custom theming. After setup, you can override any Bootstrap
+      variable before importing the framework.
+    </p>
+
+    <!-- Step 1 -->
+    <div class="d-flex gap-3 mb-4 align-items-start">
+      <div class="step-number">1</div>
+      <div class="w-100">
+        <h5 class="fw-semibold mb-1">Create project & initialise npm</h5>
+        <pre>mkdir my-bootstrap-sass-project
+cd my-bootstrap-sass-project
+npm init -y</pre>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="d-flex gap-3 mb-4 align-items-start">
+      <div class="step-number">2</div>
+      <div class="w-100">
+        <h5 class="fw-semibold mb-1">Install Bootstrap & Sass</h5>
+        <pre>npm install bootstrap
+npm install --save-dev sass</pre>
+        <p class="text-muted small mt-2 mb-0">
+          Bootstrap's npm package includes the full Sass source
+          in <code>node_modules/bootstrap/scss/</code>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="d-flex gap-3 mb-4 align-items-start">
+      <div class="step-number">3</div>
+      <div class="w-100">
+        <h5 class="fw-semibold mb-1">Create <code>scss/custom.scss</code></h5>
+        <pre>// scss/custom.scss
+// ── Step A: Override Bootstrap variables BEFORE importing Bootstrap ──
+// Any variable defined here will replace Bootstrap's default.
+$primary:       #6f42c1;    // change primary from blue to purple
+$secondary:     #20c997;    // teal secondary
+$font-size-base: 1rem;
+$border-radius:  0.5rem;    // more rounded corners
+
+// ── Step B: Import Bootstrap's Sass source ──
+// This uses the variable overrides above.
+@import "../node_modules/bootstrap/scss/bootstrap";</pre>
+      </div>
+    </div>
+    <!-- Step 4 -->
+    <div class="d-flex gap-3 mb-4 align-items-start">
+      <div class="step-number">4</div>
+      <div class="w-100">
+        <h5 class="fw-semibold mb-1">Add npm scripts in <code>package.json</code></h5>
+        <pre>{
+  "scripts": {
+    "build-css": "sass scss/custom.scss dist/css/custom.css --no-source-map",
+    "watch-css": "sass scss/custom.scss dist/css/custom.css --watch"
+  }
+}</pre>
+      </div>
+    </div>
+    <!-- Step 5 -->
+    <div class="d-flex gap-3 mb-4 align-items-start">
+      <div class="step-number">5</div>
+      <div class="w-100">
+        <h5 class="fw-semibold mb-1">Compile the Sass</h5>
+        <pre># One-time build:
+npm run build-css
+# Watch mode (recompiles on every file save):
+npm run watch-css</pre>
+      </div>
+    </div>
+    <!-- Step 6 -->
+    <div class="d-flex gap-3 mb-5 align-items-start">
+      <div class="step-number">6</div>
+      <div class="w-100">
+        <h5 class="fw-semibold mb-1">Link the compiled CSS in your HTML</h5>
+        <pre>&lt;link rel="stylesheet" href="dist/css/custom.css"/&gt;
+&lt;!-- No more CDN needed — your compiled file IS Bootstrap + your theme --&gt;</pre>
+      </div>
+    </div>
+    <!-- Result explanation -->
+    <div class="alert alert-success">
+      <h6 class="fw-bold">✅ What you get</h6>
+      <p class="mb-0">
+        After compilation, <code>dist/css/custom.css</code> contains the full Bootstrap
+        CSS with your custom colors baked in. Every Bootstrap component — buttons,
+        cards, badges, alerts — will automatically use your new <code>$primary</code>
+        and other overridden variables.
+      </p>
+    </div>
+    <!-- Project structure -->
+    <h5 class="fw-semibold mt-4 mb-2">Project Structure</h5>
+    <pre>my-bootstrap-sass-project/
+├── node_modules/
+│   └── bootstrap/
+│       └── scss/          ← Bootstrap Sass source (read-only, don't edit)
+├── scss/
+│   └── custom.scss        ← YOUR entry file
+├── dist/
+│   └── css/
+│       └── custom.css     ← compiled output (gitignore this)
+├── index.html
+└── package.json</pre>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
