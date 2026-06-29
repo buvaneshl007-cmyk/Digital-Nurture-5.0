@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="EX_1_SingletonPatternExample"/>
+	<classpathentry kind="src" path="EX_10_MVCPatternExample"/>
+	<classpathentry kind="src" path="EX_11_DependencyInjectionExample"/>
+	<classpathentry kind="src" path="EX_2_FactoryMethodPatternExample"/>
+	<classpathentry kind="src" path="EX_3_BuilderPatternExample"/>
+	<classpathentry kind="src" path="EX_4_AdapterPatternExample"/>
+	<classpathentry kind="src" path="EX_5_DecoratorPatternExample"/>
+	<classpathentry kind="src" path="EX_6_ProxyPatternExample"/>
+	<classpathentry kind="src" path="EX_7_ObserverPatternExample"/>
+	<classpathentry kind="src" path="EX_8_StrategyPatternExample"/>
+	<classpathentry kind="src" path="EX_9_CommandPatternExample"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
